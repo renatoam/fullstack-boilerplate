@@ -4,7 +4,7 @@ Aplicação criada como teste para o processo seletivo da Juntos Somos Mais. A a
 
 ## Ferramentas de desenvolvimento
 
-As ferramentas de desenvolvimento iniciais instaladas são os linters, git flow e styled components, e como design system, vou usar o Material UI. Para ícones, Font Awesome.
+As ferramentas de desenvolvimento iniciais instaladas são os linters, git flow e styled components, e como design system, vou usar o Material UI. Para extensão da quantidade de ícones, caso necessário, será usado o Font Awesome.
 
 ### Linters
 
@@ -24,6 +24,6 @@ Assim como o Commitzen, o Git Flow serve como uma forma de facilitar o trabalho 
 
 O Material UI foi escolhido por ser bem conhecido e por ser bem completo. Além disso, ele é fácil de usar e integrar no projeto e possui um próprio sistema de estilização de componentes, que é muito útil em determinados momentos.
 
-### Font Awesome
+### Font Awesome _(se necessário)_
 
-O Font Awesome foi escolhido por ser bem completo, ter forte presença no mercado e por ter integração fácil com o Material UI.
+A princípio, será usado o próprio pacote de ícones do Material UI, porém, se for necessário a adição de mais ícones, será usado o Font Awesome, que foi escolhido por ser bem completo, ter forte presença no mercado e por ter integração fácil com o Material UI.

@@ -1,0 +1,43 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true,
+    "source.fixAll": true,
+    "source.addMissingImports": true
+  },
+  "editor.tabSize": 2,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.validate.enable": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "jshint.enable": false,
+  "eslint.format.enable": true,
+  "editor.multiCursorModifier": "alt",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+  "sync.gist": "2f4c73c81c9b7029b33b0c0d56c09c66",
+  "workbench.iconTheme": "material-icon-theme",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.wordWrapColumn": 200,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.detectIndentation": false,
+  "window.zoomLevel": 0,
+  "editor.suggest.showStatusBar": true,
+  "html.format.wrapLineLength": 150,
+  "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
+  "editor.minimap.maxColumn": 200,
+  "prettier.arrowParens": "avoid",
+  "gitlens.defaultDateFormat": null,
+  "prettier.configPath": ".prettierrc",
+  "prettier.jsxSingleQuote": true,
+  "prettier.packageManager": "yarn",
+  "prettier.printWidth": 120,
+  "prettier.requireConfig": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.useEditorConfig": false
+}
