@@ -14,7 +14,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "jshint.enable": false,
-  "eslint.format.enable": true,
   "editor.multiCursorModifier": "alt",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
   "sync.gist": "2f4c73c81c9b7029b33b0c0d56c09c66",
@@ -39,5 +38,6 @@
   "prettier.requireConfig": true,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "prettier.useEditorConfig": false
+  "prettier.useEditorConfig": false,
+  "eslint.packageManager": "yarn"
 }

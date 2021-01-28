@@ -2,7 +2,7 @@
 
 Aplicação criada como teste para o processo seletivo da Juntos Somos Mais. A aplicação é desenvolvida com React, utilizando o NextJS como framework.
 
-## Ferramentas de desenvolvimento
+## Principais ferramentas de desenvolvimento
 
 As ferramentas de desenvolvimento iniciais instaladas são os linters, git flow e styled components, e como design system, vou usar o Material UI. Para extensão da quantidade de ícones, caso necessário, será usado o Font Awesome.
 
@@ -10,7 +10,9 @@ As ferramentas de desenvolvimento iniciais instaladas são os linters, git flow 
 
 - ESLint + Prettier: para ajudar no desenvolvimento, destacando erros de sintaxe, concordância ou pequenos erros, o ESLint é um grande aliado. Também é usado o Prettier que ajuda na identação do código e geralmente relacionamos as duas ferramentas, pois são muito poderosas juntas, é o caso aqui. Apesar de ter algumas regras já estabelecidas pelos pacotes que instalamos junto, eu gosto de colocar algumas regras próprias também.
 
-- Commitlint + Commitzen: o Commitlint é uma excelente ferramenta que avalia a mensagem de commit definida pelo dev, mas nem sempre lembramos todas as regras e convenções definidas, por isso usamos o Commitzen, que serve como um "wizard", no qual só precisamos ir escolhendo as opções que ele fornece e no final gera uma mensagem coesa e padronizada (que obviamente é aprovada pelo Commitlint).
+- Commitlint + Commitzen: o Commitlint é uma excelente ferramenta que avalia a mensagem de commit definida pelo dev, mas nem sempre lembramos todas as regras e convenções\* definidas, por isso usamos o Commitzen, que serve como um "wizard", no qual só precisamos ir escolhendo as opções que ele fornece e no final gera uma mensagem coesa e padronizada (que obviamente é aprovada pelo Commitlint).
+
+\*: as mensagens de commit são baseadas no [Conventional Changelog](https://github.com/conventional-changelog)
 
 ### Styled Components
 
@@ -27,3 +29,28 @@ O Material UI foi escolhido por ser bem conhecido e por ser bem completo. Além 
 ### Font Awesome _(se necessário)_
 
 A princípio, será usado o próprio pacote de ícones do Material UI, porém, se for necessário a adição de mais ícones, será usado o Font Awesome, que foi escolhido por ser bem completo, ter forte presença no mercado e por ter integração fácil com o Material UI.
+
+## Outras ferramentas
+
+### Editor Config
+
+Para todos os colaboradores ficarem na mesma página no que tange a indentação, configurações do editor, etc., o projeto possui um arquivo (.editorconfig) com um padrão para as configurações do editor, que padroniza as opções independente do editor escolhido.
+
+Há também um arquivo de configuração específico para o VS Code (.vscode/settings.json) e um pacote de snippets\*\* para facilitar no desenvolvimento em arquivos JS e JSX.
+
+\*: Se você usa o Code, o arquivo .editorconfig pode ser gerado pela extensão "EditorConfig for VS Code".
+\*\*: pequenas palavras que usamos no código que o Code transforma em um trecho de código completo.
+
+### Next Image + Inline React SVG
+
+Com o next-image, podemos importar e utilizar imagens dentro do nosso código, independente de onde salvamos as imagens. Sem ele, só é possível usar imagens que venham da pasta /public, que não permite muitas otimizações.
+
+Quanto ao Inline React SVG (babel-plugin-inline-react-svg), ele transforma nossa referência a um arquivo com extensão .svg em um código svg (html-like) propriamente dito.
+
+## Change Logs
+
+Os change logs (CHANGELOG.md) serão baseados nos padrões do projeto [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog/blob/master/CHANGELOG.md), que assim como o versionamento do projeto é baseado no [Semantic Versioning - SemVer](https://semver.org/lang/pt-BR/).
+
+---
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
