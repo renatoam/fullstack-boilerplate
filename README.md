@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Juntos Somos Mais - Desafio Front-End
 
-## Getting Started
+Aplicação criada como teste para o processo seletivo da Juntos Somos Mais. A aplicação é desenvolvida com React, utilizando o NextJS como framework.
 
-First, run the development server:
+## Ferramentas de desenvolvimento
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+As ferramentas de desenvolvimento iniciais instaladas são os linters, git flow e styled components, e como design system, vou usar o Material UI. Para ícones, Font Awesome.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Linters
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- ESLint + Prettier: para ajudar no desenvolvimento, destacando erros de sintaxe, concordância ou pequenos erros, o ESLint é um grande aliado. Também é usado o Prettier que ajuda na identação do código e geralmente relacionamos as duas ferramentas, pois são muito poderosas juntas, é o caso aqui. Apesar de ter algumas regras já estabelecidas pelos pacotes que instalamos junto, eu gosto de colocar algumas regras próprias também.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Commitlint + Commitzen: o Commitlint é uma excelente ferramenta que avalia a mensagem de commit definida pelo dev, mas nem sempre lembramos todas as regras e convenções definidas, por isso usamos o Commitzen, que serve como um "wizard", no qual só precisamos ir escolhendo as opções que ele fornece e no final gera uma mensagem coesa e padronizada (que obviamente é aprovada pelo Commitlint).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Styled Components
 
-## Learn More
+O Styled Components é uma ferramenta muito boa para utilização de CSS-in-JS. Eu optei por usar o SC, pois acho mais fácil de usar do que a ferramenta built-in do Next e porque não preciso instalar mais nada pra funcionar, como eu teria que fazer para usar arquivos sass no projeto. Além disso, a síntaxe que usamos com Styled Components é a do Sass e pra trabalhar com SSR, a configuração também é muito simples (a Vercel tem um exemplo pronto no repo deles).
 
-To learn more about Next.js, take a look at the following resources:
+### Git Flow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Assim como o Commitzen, o Git Flow serve como uma forma de facilitar o trabalho de seguir padrões quando se trabalha com Git. É perfeitamente possível trabalhar da forma padrão e com o Git Flow ao mesmo tempo. Ele é especialmente útil para desenvolvedores iniciantes ou como uma forma de agilizar o trabalho, e é por isso que está sendo usado nesse projeto.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Material UI
 
-## Deploy on Vercel
+O Material UI foi escolhido por ser bem conhecido e por ser bem completo. Além disso, ele é fácil de usar e integrar no projeto e possui um próprio sistema de estilização de componentes, que é muito útil em determinados momentos.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Font Awesome
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+O Font Awesome foi escolhido por ser bem completo, ter forte presença no mercado e por ter integração fácil com o Material UI.
