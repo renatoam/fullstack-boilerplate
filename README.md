@@ -51,6 +51,10 @@ Quanto ao Inline React SVG (babel-plugin-inline-react-svg), ele transforma nossa
 
 Os change logs (CHANGELOG.md) serão baseados nos padrões do projeto [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog/blob/master/CHANGELOG.md), que assim como o versionamento do projeto é baseado no [Semantic Versioning - SemVer](https://semver.org/lang/pt-BR/).
 
+## Estrutura de pastas
+
+Apesar do design system escolhido ser o Material UI, a organização de componentes será baseada no design system do Pinterest, a Gestalt. Eu acredito que a forma como são organizados os componentes nesse sistema atende bem a maioria dos projetos com React, porque é flexível e em relativo em algum nível, o que permite liberdade no que tange a ter que decorar um padrão.
+
 ---
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
