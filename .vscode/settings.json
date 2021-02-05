@@ -22,7 +22,6 @@
     "javascript": "javascriptreact"
   },
   "editor.wordWrapColumn": 200,
-  "editor.wordWrap": "wordWrapColumn",
   "editor.detectIndentation": false,
   "window.zoomLevel": 0,
   "editor.suggest.showStatusBar": true,
@@ -34,10 +33,11 @@
   "prettier.configPath": ".prettierrc",
   "prettier.jsxSingleQuote": true,
   "prettier.packageManager": "yarn",
-  "prettier.printWidth": 120,
+  "prettier.printWidth": 150,
   "prettier.requireConfig": true,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "prettier.useEditorConfig": false,
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "yarn",
+  "editor.wordWrap": "on",
+  "prettier.enable": false
 }

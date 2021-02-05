@@ -19,9 +19,10 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": ["off"],
     "space-before-function-paren": "off",
     "react/react-in-jsx-scope": "off",
-    "semi": "off"
+    "semi": "off",
+    "max-len": ["error", { "code": 120 }]
   }
 }
