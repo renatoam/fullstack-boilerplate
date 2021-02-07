@@ -1,4 +1,6 @@
-import axios from 'axios'
+import initAxiosInstance from '../axios'
+
+const axios = initAxiosInstance('frontend')
 
 export const CustomerService = {
   getCustomers(params) {

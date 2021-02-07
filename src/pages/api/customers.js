@@ -1,5 +1,5 @@
 const axiosInstance = require('../../services/axios')
-const axios = axiosInstance.default
+const axios = axiosInstance.default('backend')
 const { coordinatesListByType } = require('../../constants/coordinates')
 
 function checkItemInCoordinatesList(item, coordinates) {
