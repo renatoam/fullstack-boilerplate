@@ -1,17 +1,16 @@
 import axios from 'axios';
 
-const instance = axios.create({
-  baseURL: 'https://jsm-challenges.s3.amazonaws.com'
-});
+const defaultAxios = axios.create({
+  baseURL: 'https://jsm-challenges.s3.amazonaws.com',
+  headers: {
+    'Content-Type': 'application/json;charset=UTF-8',
+    'Access-Control-Allow-Origin': '*'
+  }
+})
 
-instance.interceptors.request.use(
+defaultAxios.interceptors.request.use(
   function (config) {
-    config.headers = {
-      ...config.headers,
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json'
-    };
-
+    // outras configurações padrão, como de autenticação, aqui
     return config;
   },
   function (error) {
@@ -19,4 +18,14 @@ instance.interceptors.request.use(
   }
 );
 
-export default instance;
+defaultAxios.interceptors.response.use(
+  function (response) {
+    // outras configurações aqui
+    return response
+  },
+  function (error) {
+    return Promise.reject(error)
+  }
+)
+
+export default defaultAxios;
