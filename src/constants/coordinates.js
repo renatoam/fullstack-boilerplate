@@ -1,4 +1,4 @@
-export const coordinatesListByType = {
+export const COORDINATES_LIST_BY_TYPE = {
   especial: [
     {
       minlon: -15.41158,

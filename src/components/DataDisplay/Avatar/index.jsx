@@ -1,9 +1,13 @@
+import Image from 'next/image'
+import { StyledFigure } from './style'
+
 export default function Avatar(props) {
-  const { path, alt } = props
+  const { src, alt, width, height, layout } = props
 
   return (
-    <figure>
-      <img src={path} alt={alt} />
-    </figure>
+    <StyledFigure>
+      <Image src={src} alt={alt} width={width} height={height} layout={layout} />
+    </StyledFigure>
   )
 }
+

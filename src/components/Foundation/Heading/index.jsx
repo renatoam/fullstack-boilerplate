@@ -1,3 +1,7 @@
+import { StyledTypography } from "./style";
+
 export default function Heading(props) {
-  return <h1>Heading - Title</h1>
+  const { variant, component, text } = props
+
+  return <StyledTypography variant={variant} component={component}>{text}</StyledTypography>
 }

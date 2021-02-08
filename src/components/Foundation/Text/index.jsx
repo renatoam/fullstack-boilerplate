@@ -1,3 +1,3 @@
-export default function Text({ children }) {
-  return <p>{children}</p>
+export default function Text({ text }) {
+  return <p>{text}</p>
 }

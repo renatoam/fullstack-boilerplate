@@ -3,7 +3,8 @@ export default class CustomerUseCases {
     this.customerService = CustomerService
   }
 
-  async getCustomers(params) {
+  async getCustomers(filter) {
+    const params = { filter }
     return await this.customerService.getCustomers(params)
   }
 }

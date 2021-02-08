@@ -1,15 +1,19 @@
-import Heading from '../../Foundation/Heading'
-import Text from '../../Foundation/Text'
-import Avatar from '../Avatar'
+import { capitalize } from "../../../helpers/handleString";
+import Heading from '../../Foundation/Heading';
+import Text from '../../Foundation/Text';
+import Avatar from '../Avatar';
+import { StyledCard } from "./style";
 
-export default function Card() {
+export default function Card({ data }) {
+  const fullName = `${capitalize(data.name?.first)} ${capitalize(data.name?.last)}`
+
   return (
-    <section>
-      <Avatar />
-      <Heading text="Joselino Alves" />
-      <Text text="Rua Espírito Santo, 2066" />
-      <Text text="São José de Ribamar" />
-      <Text text="Paraná - CEP: 06420222" />
-    </section>
+    <StyledCard>
+      <Avatar src={data.picture?.large} width={150} height={150} />
+      <Heading variant="h6" text={fullName} />
+      <Text text={data.location?.street} />
+      <Text text={data.location?.city} />
+      <Text text={data.location?.state + " - " + data.location?.postcode} />
+    </StyledCard>
   )
 }

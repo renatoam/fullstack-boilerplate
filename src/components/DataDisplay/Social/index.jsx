@@ -1,12 +1,14 @@
-import Icon from '../../Foundation/Icon'
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import { StyledSection } from './style';
 
-export default function Social(props) {
-  const { medias } = props
+export default function Social() {
   return (
-    <section>
-      {medias.map((media, idx) => {
-        return <Icon key={idx} icon={media} />
-      })}
-    </section>
+    <StyledSection>
+      <FacebookIcon />
+      <InstagramIcon />
+      <WhatsAppIcon />
+    </StyledSection>
   )
 }

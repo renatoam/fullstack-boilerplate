@@ -1,6 +1,6 @@
 const axiosInstance = require('../../services/axios')
 const axios = axiosInstance.default('backend')
-const { coordinatesListByType } = require('../../constants/coordinates')
+const { COORDINATES_LIST_BY_TYPE } = require('../../constants/coordinates')
 
 function checkItemInCoordinatesList(item, coordinates) {
   const longitude = coordinates.some(coordinate => item.longitude >= coordinate.minlon && item.longitude <= coordinate.maxlon)
@@ -12,12 +12,12 @@ function checkItemInCoordinatesList(item, coordinates) {
 function filterCustomersList(items, filter) {
   return items.filter((item, idx) => {
     if (filter === 'normal' || filter === 'especial') {
-      return checkItemInCoordinatesList(item.location.coordinates, coordinatesListByType[filter])
+      return checkItemInCoordinatesList(item.location.coordinates, COORDINATES_LIST_BY_TYPE[filter])
     }
 
     if (filter === 'trabalhoso') {
-      const normals = !checkItemInCoordinatesList(item.location.coordinates, coordinatesListByType["normal"])
-      const specials = !checkItemInCoordinatesList(item.location.coordinates, coordinatesListByType["especial"])
+      const normals = !checkItemInCoordinatesList(item.location.coordinates, COORDINATES_LIST_BY_TYPE["normal"])
+      const specials = !checkItemInCoordinatesList(item.location.coordinates, COORDINATES_LIST_BY_TYPE["especial"])
 
       return normals && specials
     }

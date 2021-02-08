@@ -1,3 +1,5 @@
+import { StyledShowcase } from "./style";
+
 export default function Showcase({ children }) {
-  return <section>{children}</section>
+  return <StyledShowcase>{children}</StyledShowcase>
 }

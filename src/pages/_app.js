@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types'
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from '../styles/global'
+import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
+import Page from '../components/Layout/DefaultLayoutPage';
+import { CustomersProvider } from "../context/customers";
+import { GlobalStyle } from '../styles/global';
 
 const theme = {
   colors: {
@@ -13,7 +15,11 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <CustomersProvider>
+          <Page>
+            <Component {...pageProps} />
+          </Page>
+        </CustomersProvider>
       </ThemeProvider>
     </>
   )

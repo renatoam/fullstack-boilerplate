@@ -1,9 +1,13 @@
+import { StyledFooter } from "./style";
+
 export default function Footer() {
   return (
-    <footer>
-      <p>Coluna 1</p>
-      <p>Coluna 2</p>
-      <p>Coluna 3</p>
-    </footer>
+    <StyledFooter>
+      <p>
+        <a href="https://www.juntossomosmais.com.br/">Juntos Somos Mais</a> -
+        Copyright © 2021. Todos os direitos reservados. Desenvolvido por
+        <a href="https://github.com/renatoam"> Renato Melo</a>
+      </p>
+    </StyledFooter>
   )
 }
