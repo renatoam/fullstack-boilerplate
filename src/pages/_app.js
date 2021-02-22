@@ -1,25 +1,20 @@
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import Page from '../components/Layout/DefaultLayoutPage';
-import { CustomersProvider } from "../context/customers";
+import { ProductsProvider } from '../context/products';
 import { GlobalStyle } from '../styles/global';
-
-const theme = {
-  colors: {
-    primary: '#0070f3'
-  }
-}
+import { theme } from '../styles/themes';
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <CustomersProvider>
+        <ProductsProvider>
           <Page>
             <Component {...pageProps} />
           </Page>
-        </CustomersProvider>
+        </ProductsProvider>
       </ThemeProvider>
     </>
   )

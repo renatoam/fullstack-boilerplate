@@ -1,11 +1,22 @@
 import NextImage from 'next/image'
+import PropTypes from 'prop-types'
 
 export default function Image(props) {
-  const { type, src, alt, width, height, Component, onClick } = props
+  const { svg, Component, onClick, ...imageProps } = props
 
   return (
     <>
-     {type === 'svg' ? <Component onClick={onClick} /> : <NextImage onClick={onClick} />}
+     {svg ? (
+        <Component onClick={onClick} />
+     ) : (
+        <NextImage onClick={onClick} {...imageProps} />
+     )}
     </>
   )
+}
+
+Image.propTypes = {
+  svg: PropTypes.bool,
+  Component: PropTypes.element,
+  onClick: PropTypes.func
 }

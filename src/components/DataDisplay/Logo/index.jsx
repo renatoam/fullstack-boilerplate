@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import LogoSVG from '../../../assets/icons/logo.svg';
+import PropTypes from 'prop-types';
 import Image from '../../Media/Image';
-import { StyledFigure } from "./style";
+import { StyledFigure } from './style';
 
 export default function Logo(props) {
   const { invert, href } = props
@@ -10,9 +10,14 @@ export default function Logo(props) {
     <StyledFigure invert={invert}>
       <Link href={href}>
         <a>
-          <Image type="svg" Component={LogoSVG} />
+          <Image src="/images/just-logo-white.png" width={100} height={30} layout="responsive" />
         </a>
       </Link>
     </StyledFigure>
   )
+}
+
+Logo.propTypes = {
+  invert: PropTypes.bool,
+  href: PropTypes.string
 }
