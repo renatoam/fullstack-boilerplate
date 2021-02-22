@@ -1,21 +1,7 @@
 import TextField from '@material-ui/core/TextField';
 import Close from '@material-ui/icons/Close';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import styled from 'styled-components';
-
-export const StyledAutocomplete = styled(Autocomplete)`
-  .MuiAutocomplete-endAdornment {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 100%;
-  }
-
-  .MuiAutocomplete-clearIndicator {
-    width: 100%;
-    height: 100%;
-  }
-`
+import PropTypes from 'prop-types';
+import { StyledAutocomplete } from './style';
 
 export default function SearchField(props) {
   const { options, rule } = props
@@ -31,4 +17,9 @@ export default function SearchField(props) {
       )}
     />
   )
+}
+
+SearchField.propTypes = {
+  options: PropTypes.array,
+  rule: PropTypes.func
 }

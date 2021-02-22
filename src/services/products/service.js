@@ -2,10 +2,10 @@ import initAxiosInstance from '../axios'
 
 const axios = initAxiosInstance('frontend')
 
-export const CustomerService = {
-  getCustomers(params) {
+export const ProductService = {
+  getProducts() {
     return axios
-      .get('/api/customers', { params })
+      .get('/api/products')
       .then(response => response.data)
   }
 }

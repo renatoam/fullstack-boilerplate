@@ -1,7 +1,7 @@
 import Hidden from '@material-ui/core/Hidden'
 import Menu from '@material-ui/icons/Menu'
 import { useState } from 'react'
-import { MENU_OPTIONS } from "../../../constants/menu"
+import { MENU_OPTIONS } from '../../../constants/menu'
 import Logo from '../../DataDisplay/Logo'
 import Social from '../../DataDisplay/Social'
 import User from '../../DataDisplay/User'
@@ -16,7 +16,7 @@ export default function Header() {
     <HeaderBox position="sticky">
       <Container>
         <Hidden mdUp>
-          <Image type="svg" Component={Menu} onClick={() => setMenuDisplay(true)} />
+          <Image svg Component={Menu} onClick={() => setMenuDisplay(true)} />
         </Hidden>
         <Logo invert href="/" />
         <Hidden smDown>
