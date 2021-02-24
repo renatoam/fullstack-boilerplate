@@ -3,9 +3,9 @@ import initAxiosInstance from '../axios'
 const axios = initAxiosInstance('frontend')
 
 export const ProductService = {
-  getProducts() {
+  getProducts(filter) {
     return axios
-      .get('/api/products')
+      .get('/api/products', { params: { filter } })
       .then(response => response.data)
   }
 }

@@ -3,14 +3,15 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { productUseCases } from '../services/products';
 
 export const ProductContext = createContext({
-  products: []
+  products: [],
+  getProducts: () => {}
 })
 
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([])
 
-  async function getProducts() {
-    const response = await productUseCases.getProducts()
+  async function getProducts(filter) {
+    const response = await productUseCases.getProducts(filter)
 
     setProducts(response)
   }
@@ -20,7 +21,7 @@ export const ProductsProvider = ({ children }) => {
   }, [])
 
   return (
-    <ProductContext.Provider value={{ products }}>
+    <ProductContext.Provider value={{ products, getProducts }}>
       {children}
     </ProductContext.Provider>
   )

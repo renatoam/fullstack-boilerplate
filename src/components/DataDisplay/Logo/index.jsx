@@ -10,7 +10,7 @@ export default function Logo(props) {
     <StyledFigure invert={invert}>
       <Link href={href}>
         <a>
-          <Image src="/images/just-logo-white.png" width={100} height={30} layout="responsive" />
+          <Image src="/images/just-logo-white.png" width={80} height={20} layout="responsive" />
         </a>
       </Link>
     </StyledFigure>
