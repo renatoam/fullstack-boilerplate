@@ -3,7 +3,7 @@ export default class ProductUseCases {
     this.productService = ProductService
   }
 
-  async getProducts() {
-    return await this.productService.getProducts()
+  async getProducts(filter) {
+    return await this.productService.getProducts(filter)
   }
 }

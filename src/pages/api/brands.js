@@ -3,7 +3,7 @@ const axios = axiosInstance('backend')
 
 export default async function brands(req, res) {
   const response = await axios
-    .get('/brands')
+    .get('/')
     .then(resp => resp.data.products)
 
   const rawBrands = response.map(product => product.brand)
