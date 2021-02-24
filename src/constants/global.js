@@ -10,3 +10,4 @@ export const DESCRIPTION =
 export const IMAGE = 'https://justdigital.com.br/justers.82be4f74.jpg'
 
 export const FALLBACK_IMAGE = '/images/justdigital.png'
+export const FALLBACK_IMAGEBIG = '/images/justbig.png'

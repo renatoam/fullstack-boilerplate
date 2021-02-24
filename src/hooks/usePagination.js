@@ -10,8 +10,6 @@ export const usePagination = (items, itemsPerPage) => {
     setCurrentPage(pageNumber)
   }
 
-  console.log({ items, itemsPerPage })
-
   return [
     currentItems,
     handleChangePage

@@ -5,9 +5,9 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import { FALLBACK_IMAGE } from '../../../constants/global'
 
 export default function Image(props) {
-  const { svg, Component, onClick, imageSrc, variant, ...imageProps } = props
+  const { svg, Component, onClick, imageSrc, fallback = FALLBACK_IMAGE, variant, ...imageProps } = props
   const { src, isLoading } = useImage({
-    srcList: [imageSrc, FALLBACK_IMAGE],
+    srcList: [imageSrc, fallback],
     useSuspense: false
   })
 
@@ -28,6 +28,7 @@ Image.propTypes = {
   svg: PropTypes.bool,
   imageSrc: PropTypes.string,
   variant: PropTypes.string,
+  fallback: PropTypes.string,
   Component: PropTypes.object,
   onClick: PropTypes.func
 }
