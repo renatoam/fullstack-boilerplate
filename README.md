@@ -1,6 +1,13 @@
-# Juntos Somos Mais - Desafio Front-End
+# Just Digital - Desafio Front-End
 
-Aplicação criada como teste para o processo seletivo da Juntos Somos Mais. A aplicação é desenvolvida com React, utilizando o NextJS como framework.
+Aplicação criada como teste para o processo seletivo da Just Digital. A aplicação é desenvolvida com React, utilizando o NextJS como framework.
+
+## Executando a aplicação
+
+- Instalar as dependências com **yarn** ou **npm install**
+- Iniciar o ambiente de desenvolvimento com **yarn dev** ou **npm run dev**
+
+Para commitar, executar **git commit** e seguir o wizard
 
 ## Principais ferramentas de desenvolvimento
 
