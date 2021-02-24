@@ -11,6 +11,46 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 14px;
-    font-family: sans-serif;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .centered {
+    display: flex;
+
+    &.margin {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &.position {
+      transform: translate(-50%, -50%);
+
+      &.x {
+        left: 50%;
+      }
+
+      &.y {
+        top: 50%;
+      }
+
+      &.full {
+        left: 50%;
+        top: 50%;
+      }
+    }
+
+    &.children {
+      justify-content: center;
+      align-items: center;
+
+      &.column {
+        flex-direction: column;
+      }
+    }
   }
 `

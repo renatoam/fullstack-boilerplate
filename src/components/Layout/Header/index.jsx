@@ -1,36 +1,46 @@
 import Hidden from '@material-ui/core/Hidden'
-import Menu from '@material-ui/icons/Menu'
-import { useState } from 'react'
-import { MENU_OPTIONS } from "../../../constants/menu"
+import Link from 'next/link'
+import { MENU_OPTIONS } from '../../../constants/menu'
 import Logo from '../../DataDisplay/Logo'
 import Social from '../../DataDisplay/Social'
 import User from '../../DataDisplay/User'
-import Image from '../../Media/Image'
-import { Container, Flex, FlexList, HeaderBox, MenuMobile } from './style'
+import MenuMobile from '../../Navigation/MenuHamburger'
+import CartButton from '../../Foundation/CartButton'
+import Container from '../../Foundation/Container'
+import { Flex, FlexList, HeaderBox } from './style'
 
 export default function Header() {
-  const [menuDisplay, setMenuDisplay] = useState(false)
-  const menuItems = MENU_OPTIONS.map((option, idx) => <li key={idx}>{option}</li>)
+  const menuItems = MENU_OPTIONS.map(option => {
+    return (
+      <li key={option.id}>
+        <Link href={option.link}>
+          <a>
+            {option.label}
+          </a>
+        </Link>
+      </li>
+    )
+  })
 
   return (
     <HeaderBox position="sticky">
       <Container>
-        <Hidden mdUp>
-          <Image type="svg" Component={Menu} onClick={() => setMenuDisplay(true)} />
-        </Hidden>
+        <MenuMobile>
+          {menuItems}
+        </MenuMobile>
         <Logo invert href="/" />
+
         <Hidden smDown>
-          <FlexList gap="20" case="uppercase">
+          <FlexList>
             {menuItems}
           </FlexList>
         </Hidden>
-        <Hidden mdUp>
-          <MenuMobile anchor="right" open={menuDisplay} onClose={() => setMenuDisplay(false)}>
-            {menuItems}
-          </MenuMobile>
-        </Hidden>
-        <Flex width="150">
-          <Social />
+
+        <Flex>
+          <Hidden smDown>
+            <Social />
+          </Hidden>
+          <CartButton />
           <User logged />
         </Flex>
       </Container>

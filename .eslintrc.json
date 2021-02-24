@@ -23,6 +23,7 @@
     "space-before-function-paren": "off",
     "react/react-in-jsx-scope": "off",
     "semi": "off",
-    "max-len": ["error", { "code": 120 }]
+    "max-len": ["error", { "code": 120 }],
+    "multiline-ternary": "off"
   }
 }

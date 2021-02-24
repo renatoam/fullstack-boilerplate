@@ -1,36 +1,60 @@
-import CircularProgress from '@material-ui/core/CircularProgress';
 import Link from 'next/link';
-import Logo from '../../assets/icons/juntos.svg';
+import Image from 'next/image';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import SearchField from '../../components/DataEntry/SearchField';
 import Button from '../../components/Foundation/Button';
-import Image from '../../components/Media/Image';
-import { useCustomers } from "../../context/customers";
-import { StyledSection } from "../../styles/pages/home";
+import Showcase from '../../components/DataDisplay/Showcase';
+import Card from '../../components/DataDisplay/Card';
+import Heading from '../../components/Foundation/Heading';
+import Container from '../../components/Foundation/Container';
+import { useProducts } from '../../context/products';
+import { FEATURED_PRODUCTS } from '../../constants/global'
+import { StyledSection } from '../../styles/pages/home'
 
 export default function Home(props) {
-  const { customers } = useCustomers()
-  const { data, error, mutate, loading } = customers
+  const { products } = useProducts()
+  const featuredProducts = [...products]
+  featuredProducts.length = 5
 
-  function handleDisplayOptionsRule(option) {
-    return `${option.name?.first} ${option.name?.last}`
-  }
-
-  if (loading) return <CircularProgress />
+  if (!products) return <CircularProgress />
 
   return (
-    <StyledSection format="google">
-      <Image type="svg" Component={Logo} />
-      <SearchField
-          options={data}
-          rule={handleDisplayOptionsRule}
+    <Container direction="column">
+      <Heading variant="h1" className="centered children">
+        <Image
+          src="/images/just-logo.png"
+          width={200}
+          height={50}
+          alt="Just Digital"
         />
-      <Button variant="contained" color="primary" size="large">
-        <Link href="/customer">
-          <a>
-            View All
-          </a>
-        </Link>
-      </Button>
-  </StyledSection>
+      </Heading>
+
+      <StyledSection>
+        <SearchField
+          options={products}
+        />
+
+        <Button
+          color="primary"
+          size="large"
+          className="centered margin"
+        >
+          <Link href="/products">
+            <a>
+              View all products
+            </a>
+          </Link>
+        </Button>
+      </StyledSection>
+
+      <Showcase className="centered" justify="flex-start">
+        <Heading variant="h2">
+          {FEATURED_PRODUCTS}
+        </Heading>
+        {featuredProducts?.map((product, idx) => {
+          return <Card key={idx} data={product} />
+        })}
+      </Showcase>
+  </Container>
   )
 }

@@ -1,8 +1,13 @@
 import axios from 'axios';
 
+const endpoint = {
+  frontend: 'http://localhost:3000',
+  backend: 'https://api-desafio-front.justdigital.com.br'
+}
+
 function initAxiosInstance(env) {
   const defaultAxios = axios.create({
-    baseURL: env === 'backend' ? 'https://jsm-challenges.s3.amazonaws.com' : 'http://localhost:3000',
+    baseURL: endpoint[env],
     headers: {
       'Content-Type': 'application/json;charset=UTF-8',
       'Access-Control-Allow-Origin': '*'
