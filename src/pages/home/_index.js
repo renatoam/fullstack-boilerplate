@@ -10,12 +10,30 @@ import Heading from '../../components/Foundation/Heading';
 import Container from '../../components/Foundation/Container';
 import { FEATURED_PRODUCTS } from '../../constants/global'
 import { StyledSection } from '../../styles/pages/home'
+import axiosInstance from '../../services/axios';
+
+export async function getStaticProps(context) {
+  const axios = axiosInstance('backend')
+  const products = await axios.get('/').then(response => response.data.products)
+
+  if (!products) {
+    return {
+      notFound: true
+    }
+  }
+
+  return {
+    props: {
+      products
+    }
+  }
+}
 
 export default function Home({ products }) {
+  console.log('products', products)
+
   const featuredProducts = [...products]
   featuredProducts.length = 5
-
-  console.log('feat', featuredProducts)
 
   if (!products) return <CircularProgress />
 
