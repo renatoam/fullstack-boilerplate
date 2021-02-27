@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { TITLE_PAGE, DESCRIPTION, IMAGE } from '../../../constants/global'
 import Breadcrumb from '../../Navigation/Breadcrumb'
 import SEO from '../../Configuration/SEO'
+import ErrorBoundary from '../../Configuration/Error'
 import Footer from '../Footer'
 import Header from '../Header'
 import { StyledMain } from './style'
@@ -19,7 +20,9 @@ export default function DefaultPage({ children }) {
       </Head>
       <Header />
       <Breadcrumb />
-        {children}
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
       <Footer />
     </StyledMain>
   )

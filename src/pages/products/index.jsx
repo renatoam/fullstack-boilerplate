@@ -1,46 +1,56 @@
+import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Pagination from '@material-ui/lab/Pagination';
-import { useState, useEffect, useCallback } from 'react';
 import Card from '../../components/DataDisplay/Card';
 import Showcase from '../../components/DataDisplay/Showcase';
 import Filter from '../../components/DataEntry/Filter';
 import Heading from '../../components/Foundation/Heading';
 import { EMPTY_SEARCH, PRODUCTS_PER_PAGE } from '../../constants/global';
-import { useProducts } from '../../context/products';
 import { usePagination } from '../../hooks/usePagination';
-import { brandUseCases } from '../../services/brands'
+import axiosInstance from '../../services/axios'
 import {
   StyledBodyContainer,
   StyledMain
 } from '../../styles/pages/products';
 
-export default function Products(props) {
-  const [filterOptions, setFilterOptions] = useState([])
-  const { products, getProducts } = useProducts()
+export async function getServerSideProps(context) {
+  const axios = axiosInstance('backend')
+  const filter = context.query.filter
+
+  const rawProducts = await axios.get('/').then(response => response.data.products)
+  const rawBrands = rawProducts.map(product => product.brand)
+
+  const brands = [...new Set(rawBrands)]
+  const products = filter
+    ? rawProducts.filter(product => product.brand === filter)
+    : rawProducts
+
+  return {
+    props: {
+      brands: [...brands, 'Todos'],
+      products
+    }
+  }
+}
+
+export default function Products({ brands, products }) {
+  const router = useRouter()
   const [currentProducts, handleChangePage] = usePagination(products, PRODUCTS_PER_PAGE)
 
   if (!products) return <CircularProgress />
 
   function handleFilterCustomers(value) {
-    const filter = value !== 'Todos' ? value : ''
-    getProducts(filter)
+    const filter = value !== 'Todos' ? `?filter=${value}` : ''
+    router.push(`/products${filter}`)
   }
-
-  const getInitialBrands = useCallback(() => {
-    brandUseCases.getBrands()
-      .then(response => setFilterOptions([...response, 'Todos']))
-  }, [])
-
-  useEffect(() => {
-    getInitialBrands()
-  }, [])
 
   return (
     <StyledMain>
       <Filter
         name="products"
         title="Filter by brand: "
-        options={filterOptions}
+        options={brands}
         handleChange={handleFilterCustomers}
       />
       <StyledBodyContainer>
@@ -57,4 +67,9 @@ export default function Products(props) {
       </StyledBodyContainer>
     </StyledMain>
   )
+}
+
+Products.propTypes = {
+  brands: PropTypes.array,
+  products: PropTypes.array
 }

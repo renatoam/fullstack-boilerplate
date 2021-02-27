@@ -1,4 +1,4 @@
-# Just Digital - Desafio Front-End
+# Next JS Boilerplate
 
 Aplicação criada como teste para o processo seletivo da Just Digital. A aplicação é desenvolvida com React, utilizando o NextJS como framework.
 
