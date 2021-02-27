@@ -42,6 +42,14 @@ Tarefas a implementar para melhorar o código, a UX e a performance geral da apl
 - Gerar uma tag
 - Fazer deploy na Vercel
 
+### DevOps
+
+- Criar um Dockerfile
+
+### Segurança
+
+- Criar autenticação
+
 ### Documentação
 
 - Traduzir seção To Do para o inglês
@@ -64,6 +72,7 @@ Tarefas a implementar para melhorar o código, a UX e a performance geral da apl
 
 - **Performance**:
   - Aplicar uso do React Query (cachear requisições e melhorar a busca de dados)
+  - Implementar Incremental Static Generation [Felipe Deschamps NextJS](https://www.youtube.com/watch?v=V2T_bkOs0xA&ab_channel=FilipeDeschamps)
 
 - **Feeback**:
   - Adicionar Nprogress
