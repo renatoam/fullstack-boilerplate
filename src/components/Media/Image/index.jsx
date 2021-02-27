@@ -18,7 +18,7 @@ export default function Image(props) {
      {svg ? (
         <Component onClick={onClick} />
      ) : (
-        <NextImage onClick={onClick} src={src} {...imageProps} />
+        <NextImage onClick={onClick} src={src || FALLBACK_IMAGE} {...imageProps} />
      )}
     </>
   )

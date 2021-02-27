@@ -8,24 +8,14 @@ import Showcase from '../../components/DataDisplay/Showcase';
 import Card from '../../components/DataDisplay/Card';
 import Heading from '../../components/Foundation/Heading';
 import Container from '../../components/Foundation/Container';
-import axiosInstance from '../../services/axios';
 import { FEATURED_PRODUCTS } from '../../constants/global'
 import { StyledSection } from '../../styles/pages/home'
-
-export async function getServerSideProps(context) {
-  const axios = axiosInstance('backend')
-  const products = await axios.get('/').then(response => response.data.products)
-
-  return {
-    props: {
-      products
-    }
-  }
-}
 
 export default function Home({ products }) {
   const featuredProducts = [...products]
   featuredProducts.length = 5
+
+  console.log('feat', featuredProducts)
 
   if (!products) return <CircularProgress />
 
@@ -62,7 +52,7 @@ export default function Home({ products }) {
         <Heading variant="h2">
           {FEATURED_PRODUCTS}
         </Heading>
-        {featuredProducts?.map((product, idx) => {
+        {featuredProducts.length && featuredProducts.map((product, idx) => {
           return <Card key={idx} data={product} />
         })}
       </Showcase>
