@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import PropTypes from 'prop-types'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import SearchField from '../../components/DataEntry/SearchField';
 import Button from '../../components/Foundation/Button';
@@ -7,12 +8,22 @@ import Showcase from '../../components/DataDisplay/Showcase';
 import Card from '../../components/DataDisplay/Card';
 import Heading from '../../components/Foundation/Heading';
 import Container from '../../components/Foundation/Container';
-import { useProducts } from '../../context/products';
+import axiosInstance from '../../services/axios';
 import { FEATURED_PRODUCTS } from '../../constants/global'
 import { StyledSection } from '../../styles/pages/home'
 
-export default function Home(props) {
-  const { products } = useProducts()
+export async function getServerSideProps(context) {
+  const axios = axiosInstance('backend')
+  const products = await axios.get('/').then(response => response.data.products)
+
+  return {
+    props: {
+      products
+    }
+  }
+}
+
+export default function Home({ products }) {
   const featuredProducts = [...products]
   featuredProducts.length = 5
 
@@ -57,4 +68,8 @@ export default function Home(props) {
       </Showcase>
   </Container>
   )
+}
+
+Home.propTypes = {
+  products: PropTypes.array
 }
