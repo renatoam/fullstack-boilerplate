@@ -9,12 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Error Boundary global
+- Typescript
 
 ### Changed
 
-- Added unreleased section on Changelog
-- Added ToDo section on Readme
+- Convert js and jsx files to typescript file extensions
+- Change typescript configuration
+- Create Styled Component default theme
+- Organize imports
 
 ## [0.0.1] - 2021-03-01
 
@@ -28,6 +30,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Applying responsiveness
 - Configuring branches using Git Flow pattern
 - Configuring prettier and commitzen
+- Error Boundary global
+
+### Changed
+
+- Added unreleased section on Changelog
+- Added ToDo section on Changelog
 
 ---
 
@@ -54,19 +62,23 @@ Tarefas a implementar para melhorar o código, a UX e a performance geral da apl
 
 - Traduzir seção To Do para o inglês
 - Atualizar Readme com as informações mais novas e remover referências a alguma empresa
+- Implementar Storybook
+
+### Desenvolvimento
+
+- Aplicar Typescript
+- Aplicar testes automatizados
 
 ### Patterns
 
 - Aplicar classes para chamadas api (que faltam) e filtragens
 - Verificar onde dá pra usar HOC
-- Aplicar Typescript
 - Aplicar a estrutura de Axios do CRED
 - Verificar os padrões do CRED
 - Verificar os padrões do [Landy React Template](https://github.com/Adrinlol/landy-react-template)
 - Aplicar Code Splitting*
   - Usar Dynamic Imports (se fosse só client-side, usaria React.lazy com Suspense)
   - Verificar a necessidade de Error Boundaries mais específicos
-- Implementar Storybook
 
 ### User Experience
 
