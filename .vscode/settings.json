@@ -3,7 +3,7 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.organizeImports": false,
+    "source.organizeImports": true,
     "source.fixAll": true,
     "source.addMissingImports": true
   },
@@ -13,10 +13,8 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "jshint.enable": false,
   "editor.multiCursorModifier": "alt",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
-  "sync.gist": "2f4c73c81c9b7029b33b0c0d56c09c66",
   "workbench.iconTheme": "material-icon-theme",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
@@ -32,7 +30,6 @@
   "gitlens.defaultDateFormat": null,
   "prettier.configPath": ".prettierrc",
   "prettier.jsxSingleQuote": true,
-  "prettier.packageManager": "yarn",
   "prettier.printWidth": 150,
   "prettier.requireConfig": true,
   "prettier.semi": false,
