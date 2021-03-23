@@ -1,13 +1,14 @@
-import PropTypes from 'prop-types'
-import { useState } from 'react';
-import Image from '../../components/Media/Image'
-import Container from '../../components/Foundation/Container';
-import ControlButton from '../../components/Foundation/ControlButton'
-import axiosInstance from '../../services/axios'
-import { FALLBACK_IMAGEBIG } from '../../constants/global'
-import { useCart } from '../../context/cart'
-import { convertToCurrency } from '../../helpers/handleString'
-import { StyledSection } from '../../styles/pages/details'
+import Container from '@components/Foundation/Container'
+import ControlButton from '@components/Foundation/ControlButton'
+import Image from '@components/Media/Image'
+import { FALLBACK_IMAGEBIG } from '@constants/global'
+import { useCart } from '@context/cart'
+import { convertToCurrency } from '@helpers/handleString'
+import { ProductData } from '@helpers/interfaces'
+import axiosInstance from '@services/axios'
+import { StyledSection } from '@styles/pages/details'
+import { GetStaticPropsContext } from 'next'
+import { useState } from 'react'
 
 // PARECE QUE SÓ CONSIGO TESTAR ESSAS COISAS RODANDO O BUILD
 // MAS O BUILD TÁ DANDO ERRO, VERIFICAR
@@ -15,8 +16,8 @@ import { StyledSection } from '../../styles/pages/details'
 export async function getStaticPaths() {
   const axios = axiosInstance('backend')
   const products = await axios.get('/').then(response => response.data.products)
-  const filteredProducts = products.filter(product => product.brand === 'Samsung')
-  const productsPaths = filteredProducts.map(product => `/products/${product.id}`)
+  const filteredProducts = products.filter((product: ProductData) => product.brand === 'Samsung')
+  const productsPaths = filteredProducts.map((product: ProductData) => `/products/${product.id}`)
 
   return {
     paths: productsPaths,
@@ -24,11 +25,11 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(context) {
-  const id = context.params.product
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const id = context?.params?.product
   const axios = axiosInstance('backend')
   const products = await axios.get('/').then(response => response.data.products)
-  const currentProduct = products.find(product => product.id.toString() === id)
+  const currentProduct = products.find((product: ProductData) => product.id.toString() === id)
 
   return {
     props: {
@@ -37,7 +38,7 @@ export async function getStaticProps(context) {
   }
 }
 
-export default function ProductDetails({ currentProduct }) {
+export default function ProductDetails({ currentProduct }: { currentProduct: ProductData }) {
   const { dispatch } = useCart()
   const [value, setValue] = useState(0)
   const [error, setError] = useState('')
@@ -49,13 +50,13 @@ export default function ProductDetails({ currentProduct }) {
     margin: '20px 0'
   }
 
-  function handleDispatchAction(action) {
+  function handleDispatchAction(action: string) {
     const newValue = action === 'ADD' ? value + 1 : value - 1
     dispatch({ type: action, payload: currentProduct })
     setValue(newValue)
   }
 
-  function handleValueByInput(value) {
+  function handleValueByInput(value: number) {
     dispatch({
       type: 'CHANGE',
       payload: {
@@ -66,7 +67,7 @@ export default function ProductDetails({ currentProduct }) {
     setValue(value)
   }
 
-  function handleAddingItems(idAction) {
+  function handleAddingItems(idAction: string) {
     const action = idAction.toUpperCase()
 
     if (currentProduct.stock === 0) {
@@ -77,7 +78,7 @@ export default function ProductDetails({ currentProduct }) {
     handleDispatchAction(action)
   }
 
-  function handleRemovingItems(idAction) {
+  function handleRemovingItems(idAction: string) {
     const action = idAction.toUpperCase()
 
     if (currentProduct.currentQuantity === 0) return
@@ -91,7 +92,7 @@ export default function ProductDetails({ currentProduct }) {
     <Container>
       <StyledSection className="wrapper">
         <StyledSection className="image">
-          <Image src={FALLBACK_IMAGEBIG} width={500} height={500} fallback={FALLBACK_IMAGEBIG} />
+          <Image src={FALLBACK_IMAGEBIG} width={500} height={500} />
         </StyledSection>
         <StyledSection className="info">
           <div>
@@ -106,7 +107,7 @@ export default function ProductDetails({ currentProduct }) {
               handleAddingItems={handleAddingItems}
               handleRemovingItems={handleRemovingItems}
               handleChange={handleValueByInput}
-              />
+            />
           </div>
         </StyledSection>
         <StyledSection className="description">
@@ -115,8 +116,4 @@ export default function ProductDetails({ currentProduct }) {
       </StyledSection>
     </Container>
   )
-}
-
-ProductDetails.propTypes = {
-  currentProduct: PropTypes.object
 }

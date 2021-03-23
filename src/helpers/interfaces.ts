@@ -61,7 +61,7 @@ export interface SkeletonProps {
 }
 
 export interface ShowcaseProps extends GenericChildrenProps {
-  justify: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'initial' | 'inherit';
+  justify?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'initial' | 'inherit';
 }
 
 /**
