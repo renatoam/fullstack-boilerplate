@@ -1,11 +1,12 @@
-import axios from 'axios';
+import { AxiosEnv } from '@helpers/types'
+import axios from 'axios'
 
 const endpoint = {
   frontend: 'http://localhost:3000',
   backend: 'https://api-desafio-front.justdigital.com.br'
 }
 
-function initAxiosInstance(env) {
+function initAxiosInstance(env: AxiosEnv) {
   const defaultAxios = axios.create({
     baseURL: endpoint[env],
     headers: {
@@ -17,12 +18,12 @@ function initAxiosInstance(env) {
   defaultAxios.interceptors.request.use(
     function (config) {
       // configurações de autenticação e checagem de ambiente (front ou back) aqui
-      return config;
+      return config
     },
     function (error) {
-      return Promise.reject(error);
+      return Promise.reject(error)
     }
-  );
+  )
 
   defaultAxios.interceptors.response.use(
     function (response) {
@@ -37,4 +38,4 @@ function initAxiosInstance(env) {
   return defaultAxios
 }
 
-export default initAxiosInstance;
+export default initAxiosInstance

@@ -1,18 +1,13 @@
-import { VariantMuiButtonProps } from '@helpers/interfaces';
-import MuiButton from '@material-ui/core/Button';
-import styled from 'styled-components';
+import MuiButton, { ButtonProps } from '@material-ui/core/Button'
+import styled from 'styled-components'
 
-export const StyledButton = styled(MuiButton)<VariantMuiButtonProps>`
+export const StyledButton = styled(MuiButton)<ButtonProps>`
   &.MuiButton-root {
     background-color: ${props => {
-      return props.variant === 'contained'
-        ? props.theme.colors.primary
-        : '#fff'
+      return props.variant === 'contained' ? props.theme.colors.primary : '#fff'
     }};
     border: ${props => {
-      return props.variant === 'outlined'
-        ? '1px solid ' + props.theme.colors.primary
-        : '#fff'
+      return props.variant === 'outlined' ? '1px solid ' + props.theme.colors.primary : '#fff'
     }};
     color: ${props => {
       return props.variant === 'contained'
@@ -20,7 +15,7 @@ export const StyledButton = styled(MuiButton)<VariantMuiButtonProps>`
         : props.theme.colors.primary
     }};
     display: flex;
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin: 10px;
     max-height: 32px;
     min-width: 170px;
@@ -29,8 +24,8 @@ export const StyledButton = styled(MuiButton)<VariantMuiButtonProps>`
     &:hover {
       background-color: ${props => {
         return props.variant === 'contained'
-        ? props.theme.colors.primaryHover
-        : props.theme.colors.secondaryHover
+          ? props.theme.colors.primaryHover
+          : props.theme.colors.secondaryHover
       }};
     }
 

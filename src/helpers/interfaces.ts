@@ -1,67 +1,69 @@
-import { TypographyVariant } from '@material-ui/core'
+import { ProductDataArray } from '@helpers/types'
+import { ButtonProps, TypographyVariant } from '@material-ui/core'
 import React, { ReactNode } from 'react'
 
 /**
  * Common
  */
 export interface GenericChildrenProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 /**
  * Foundation
  */
 
-export interface VariantMuiButtonProps {
-  variant?: 'contained' | 'outlined';
-}
-
-export interface ButtonProps extends VariantMuiButtonProps {
-  startIcon?: ReactNode;
-  handleClick(event: React.MouseEvent<HTMLButtonElement>): void;
-  children: ReactNode;
+export interface GenericButtonProps extends ButtonProps {
+  handleClick?(event: React.MouseEvent<HTMLButtonElement>): void
 }
 
 export interface BuyButtonProps {
-  action: 'ADD' | 'REMOVE' | 'REMOVEALL';
-  handleClick(event: React.MouseEvent<HTMLButtonElement>): void;
-  children: ReactNode;
+  action: 'ADD' | 'REMOVE' | 'REMOVEALL'
+  handleClick(event: React.MouseEvent<HTMLButtonElement>): void
+  children: ReactNode
 }
 
 export interface BuyButtonOptions {
   [key: string]: {
-    icon: React.ReactNode;
-    variant: 'contained' | 'outlined';
+    icon: React.ReactNode
+    variant: 'contained' | 'outlined'
   }
 }
 
 export interface ControlButtonProps {
-  handleAddingItems: (action: string) => void;
-  handleRemovingItems: (action: string) => void;
-  handleChange: (value: number) => void;
-  value: number;
-  error: string;
-}
-
-export interface HeadingProps extends MuiTypographyVariantProps {
-  component?: ReactNode;
-  clamp?: number;
+  handleAddingItems: (action: string) => void
+  handleRemovingItems: (action: string) => void
+  handleChange: (value: number) => void
+  value: number
+  error: string
 }
 
 export interface MuiTypographyVariantProps {
-  variant?: TypographyVariant;
-  children: ReactNode;
+  variant?: TypographyVariant
+  children: ReactNode
 }
 
+export interface HeadingProps extends MuiTypographyVariantProps {
+  component?: ReactNode
+  clamp?: number
+}
 /**
  * Data Display
  */
 export interface SkeletonProps {
-  variant?: "circle" | "rect" | "text" | undefined;
+  variant?: 'circle' | 'rect' | 'text' | undefined
 }
 
 export interface ShowcaseProps extends GenericChildrenProps {
-  justify?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'initial' | 'inherit';
+  justify?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly'
+    | 'initial'
+    | 'inherit'
 }
 
 /**
@@ -69,15 +71,15 @@ export interface ShowcaseProps extends GenericChildrenProps {
  */
 
 export interface FilterProps {
-  name: string;
-  options: string[];
-  title: string;
-  handleChange: (value: string) => void;
+  name: string
+  options: string[]
+  title: string
+  handleChange: (value: string) => void
 }
 
 export interface SingleOptionProps {
-  id: string;
-  title: string;
+  id: string | number
+  title: string
 }
 
 export interface OptionsProps {
@@ -89,23 +91,22 @@ export interface OptionsProps {
  */
 
 export interface LogoProps {
-  invert?: boolean;
-  href?: string;
+  invert?: boolean
+  href?: string
 }
 
 /**
  * Navigation
  */
 
-
 /**
  * Configuration
  */
 export interface SEOProps {
-  title: string | undefined;
-  description: string | undefined;
-  image: string | undefined;
-  shouldIndexPage?: boolean;
+  title: string | undefined
+  description: string | undefined
+  image: string | undefined
+  shouldIndexPage?: boolean
 }
 
 /**
@@ -113,33 +114,33 @@ export interface SEOProps {
  */
 
 export interface ProductData {
-  id: number;
-  title: string;
-  price: number;
-  picture: string;
-  description: string;
-  memory: string;
-  brand: string;
-  chipType: string;
-  quantity: number;
-  stock: number;
-  currentQuantity?: number;
-  newQuantity?: number;
+  id: number
+  title: string
+  price: number
+  picture: string
+  description: string
+  memory: string
+  brand: string
+  chipType: string
+  quantity: number
+  stock: number
+  currentQuantity?: number
+  newQuantity?: number
 }
 
 export interface DispatchShape {
-  type: string;
-  payload: ProductData;
+  type: string
+  payload: ProductData
 }
 
 export interface CartShape {
-  cart: ProductData[];
-  dispatch: ({ type, payload }: DispatchShape) => void;
+  cart: ProductDataArray
+  dispatch: ({ type, payload }: DispatchShape) => void
 }
 
 export interface ProductShape {
-  products: ProductData[];
-  getProducts: (filter: string) => void;
+  products: ProductDataArray
+  getProducts: (filter: string) => void
 }
 
 /**
@@ -147,9 +148,9 @@ export interface ProductShape {
  */
 
 export interface ActionButtonTextShape {
-  ADD: 'ADD TO CART' | string;
-  REMOVE?: 'REMOVE FROM CART' | string;
-  REMOVEALL?: 'REMOVE FROM CART' | string;
+  ADD: 'ADD TO CART' | string
+  REMOVE?: 'REMOVE FROM CART' | string
+  REMOVEALL?: 'REMOVE FROM CART' | string
 }
 
 /**
@@ -159,5 +160,18 @@ export interface ActionButtonTextShape {
 export interface ErrorProps extends GenericChildrenProps {}
 
 export interface ErrorState {
-  hasError: boolean;
+  hasError: boolean
 }
+
+/**
+ * Pages
+ */
+
+export interface ProductPageProps {
+  brands: string[]
+  products: ProductDataArray
+}
+
+/**
+ * Services
+ */
