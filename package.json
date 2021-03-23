@@ -1,7 +1,10 @@
 {
-  "name": "just",
+  "name": "next-typescript-boilerplate",
   "version": "0.1.0",
+  "description": "Next JS boilerplate built using Typescript",
   "private": true,
+  "keywords": ["react", "next", "nextjs", "typescript", "javascript", "styled-components", "materialui"],
+  "author": "Renato Melo",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
