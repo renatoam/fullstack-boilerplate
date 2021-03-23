@@ -1,18 +1,16 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": null,
   "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "files.autoSave": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.organizeImports": true,
-    "source.fixAll": true,
     "source.addMissingImports": true
   },
   "editor.tabSize": 2,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.multiCursorModifier": "alt",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
   "workbench.iconTheme": "material-icon-theme",
@@ -30,11 +28,28 @@
   "gitlens.defaultDateFormat": null,
   "prettier.configPath": ".prettierrc",
   "prettier.jsxSingleQuote": true,
-  "prettier.printWidth": 150,
+  "prettier.printWidth": 120,
   "prettier.requireConfig": true,
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "eslint.packageManager": "yarn",
   "editor.wordWrap": "on",
-  "prettier.enable": false
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
