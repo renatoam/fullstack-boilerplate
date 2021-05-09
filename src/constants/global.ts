@@ -1,7 +1,7 @@
 /**
  * TEXT
  */
-export const EMPTY_SEARCH = 'There\'s no products for this brand'
+export const EMPTY_SEARCH = "There's no products for this brand"
 export const EMPTY_CART = 'Oh...your cart is empty!'
 export const FEATURED_PRODUCTS = 'Featured Products'
 export const COMPANY_NAME = process.env.COMPANY_NAME
@@ -26,6 +26,11 @@ export const IMAGE = process.env.COMPANY_IMAGE
 /**
  * IMAGES
  */
+
+// Logo
+export const LOGO_PATH = '/images/logo.svg'
+export const LOGO_ALTERNATIVE_PATH = '/images/logo-alternative.svg'
+export const LOGOTIPO_PATH = '/images/logotipo.svg'
 
 // Icons
 export const EMPTY_CART_ICON = '/icons/empty-cart.svg'

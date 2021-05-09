@@ -2,14 +2,17 @@ import { DefaultTheme } from 'styled-components'
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: '#4b3c80',
-    secondary: '#ECECEC',
-    primaryHover: '#6954b3',
-    secondaryHover: '#EAEAEA'
+    primary: '#222F2F',
+    secondary: '#00DDDD',
+    primaryHover: '#2E4141',
+    secondaryHover: '#05ACAC'
   },
   images: {
-    main: 'https://justdigital.com.br/just-logo-white.67c5621b.png',
-    alt: 'https://justdigital.com.br/just-logo.2bbdba5a.png'
+    logo: {
+      main: '/images/logo.svg',
+      alternative: '/images/logo-alternative.svg',
+      full: '/images/logotipo.svg'
+    }
   },
   dark: {
     colors: {

@@ -14,12 +14,6 @@ export type ImageProps = NextImageProps & SkeletonProps
 
 export type ProductDataArray = ProductData[]
 
-export type AxiosEnv = 'frontend' | 'backend'
-
 export type GetBrandsType = {
   getBrands: () => string[]
-}
-
-export type GetProductsType = {
-  getProducts: (filter: string) => object[]
 }

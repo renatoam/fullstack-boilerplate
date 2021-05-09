@@ -1,9 +1,8 @@
-import initAxiosInstance from '../axios'
-
-const axios = initAxiosInstance('frontend')
+import { GetBrandsType } from '@helpers/types'
+import { frontendAxios as axios } from '../axios'
 
 export const BrandService = {
-  getBrands() {
+  async getBrands(): Promise<GetBrandsType[]> {
     return axios.get('/api/brands').then(response => response.data)
   }
 }

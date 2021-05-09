@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="380" viewBox="0 0 380 380">
+  <g id="Alternative" transform="translate(-437)">
+    <g id="Elipse_1" data-name="Elipse 1" transform="translate(437)" fill="#fff" stroke="#222f2f" stroke-width="10">
+      <circle cx="190" cy="190" r="190" stroke="none"/>
+      <circle cx="190" cy="190" r="185" fill="none"/>
+    </g>
+    <g id="Elipse_2" data-name="Elipse 2" transform="translate(467 30)" fill="#fff" stroke="#222f2f" stroke-width="1">
+      <circle cx="160.5" cy="160.5" r="160.5" stroke="none"/>
+      <circle cx="160.5" cy="160.5" r="160" fill="none"/>
+    </g>
+    <text id="_" data-name="{}" transform="translate(540 246)" fill="#0dd" font-size="200" font-family="CambriaMath, Cambria Math" letter-spacing="0.1em"><tspan x="0" y="0">{}</tspan></text>
+  </g>
+</svg>

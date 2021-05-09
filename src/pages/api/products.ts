@@ -1,13 +1,11 @@
 import { ProductData } from '@helpers/interfaces'
-import axiosInstance from '@services/axios'
+import { backendAxios as axios } from '@services/axios'
 import { NextApiRequest, NextApiResponse } from 'next'
-const axios = axiosInstance('backend')
 
 export default async function products(request: NextApiRequest, response: NextApiResponse) {
+  // abstrair essa requisição e usar aqui e no getStaticProps com Redux
   const filter = request.query.filter
-  const products = await axios
-    .get('/')
-    .then(resp => resp.data.products)
+  const products = await axios.get('/products').then(resp => resp.data)
 
   if (filter) {
     const filteredData = products.filter((products: ProductData) => {

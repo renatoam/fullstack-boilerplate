@@ -1,6 +1,4 @@
-import initAxiosInstance from '../axios'
-
-const axios = initAxiosInstance('frontend')
+import { frontendAxios as axios } from '../axios'
 
 export const ProductService = {
   getProducts(filter: string) {

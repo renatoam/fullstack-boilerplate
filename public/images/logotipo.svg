@@ -1,0 +1,17 @@
+<svg id="Logotipo" xmlns="http://www.w3.org/2000/svg" width="1540" height="684" viewBox="0 0 1540 684">
+  <g id="Componente_5_1" data-name="Componente 5 – 1" transform="translate(0 380)">
+    <text id="_dev:_love_coding_" data-name="{ dev: &apos;love coding&apos; }" transform="translate(439 289)" fill="#fff" font-size="60" font-family="Consolas"><tspan x="0" y="0">{ </tspan><tspan y="0" fill="#0dd">dev:</tspan><tspan y="0"> </tspan><tspan y="0" fill="#e59180">&apos;love coding&apos;</tspan><tspan y="0" xml:space="preserve"> }</tspan></text>
+    <text id="_frontending_" data-name="&lt;frontending/&gt;" transform="translate(0 184)" fill="rgba(0,221,221,0.5)" font-size="200" font-family="Consolas"><tspan x="0" y="0">&lt;</tspan><tspan y="0">frontending</tspan><tspan y="0">/&gt;</tspan></text>
+  </g>
+  <g id="Componente_4_1" data-name="Componente 4 – 1" transform="translate(579)">
+    <g id="Elipse_1" data-name="Elipse 1" fill="#222f2f" stroke="#fff" stroke-width="10">
+      <circle cx="190" cy="190" r="190" stroke="none"/>
+      <circle cx="190" cy="190" r="185" fill="none"/>
+    </g>
+    <g id="Elipse_2" data-name="Elipse 2" transform="translate(30 30)" fill="#222f2f" stroke="#fff" stroke-width="1">
+      <circle cx="160.5" cy="160.5" r="160.5" stroke="none"/>
+      <circle cx="160.5" cy="160.5" r="160" fill="none"/>
+    </g>
+    <text id="_" data-name="{}" transform="translate(103 246)" fill="#0dd" font-size="200" font-family="CambriaMath, Cambria Math" letter-spacing="0.1em"><tspan x="0" y="0">{}</tspan></text>
+  </g>
+</svg>

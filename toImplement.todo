@@ -1,0 +1,58 @@
+## To do
+
+Tarefas a implementar para melhorar o código, a UX e a performance geral da aplicação.
+
+### Geral
+
+- Corrigir os bugs na versão atual
+- Mudar o layout para um tema genérico (cores e imagens)
+- Gerar uma tag
+- Fazer deploy na Vercel
+
+### DevOps
+
+- Criar um Dockerfile
+
+### Segurança
+
+- Criar autenticação
+
+### Documentação
+
+- Traduzir seção To Do para o inglês
+- Atualizar Readme com as informações mais novas e remover referências a alguma empresa
+- Implementar Storybook
+
+### Desenvolvimento
+
+- Aplicar Typescript
+- Aplicar testes automatizados
+
+### Patterns
+
+- Aplicar classes para chamadas api (que faltam) e filtragens
+- Verificar onde dá pra usar HOC
+- Aplicar a estrutura de Axios do CRED
+- Verificar os padrões do CRED
+- Verificar os padrões do [Landy React Template](https://github.com/Adrinlol/landy-react-template)
+- Aplicar Code Splitting*
+  - Usar Dynamic Imports (se fosse só client-side, usaria React.lazy com Suspense)
+  - Verificar a necessidade de Error Boundaries mais específicos
+
+### User Experience
+
+- **Performance**:
+  - Aplicar uso do React Query (cachear requisições e melhorar a busca de dados)
+  - Implementar Incremental Static Generation [Felipe Deschamps NextJS](https://www.youtube.com/watch?v=V2T_bkOs0xA&ab_channel=FilipeDeschamps)
+
+- **Feeback**:
+  - Adicionar Nprogress
+  - Aplicar a estrutura de notificações do CRED (usar alguma snackbar)
+  - Implementar Skeleton/Shimmer Loading [Link de Shimmer com css puro se for preciso](https://rishi-raj-jain.github.io/snippet/Adding%20shimmer%20css%20(loading%20css)%20into%20your%20Next.js%20project)
+
+- **Acessibilidade**:
+  - Aplicar padrões de acessibilidade
+  - Adicionar modais e popups usando Portal (ler sobre a acessibilidade envolvida)
+
+- **Responsividade**:
+  - Verificar se vale a pena transformar em PWA (service worker, manifest.json)

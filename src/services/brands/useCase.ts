@@ -1,8 +1,11 @@
 import { GetBrandsType } from '@helpers/types'
 
+interface IBrandService {
+  getBrands(): Promise<GetBrandsType[]>
+}
 export default class BrandUseCases {
-  brandService: GetBrandsType
-  constructor({ BrandService }: { BrandService: GetBrandsType }) {
+  brandService: IBrandService
+  constructor({ BrandService }: { BrandService: IBrandService }) {
     this.brandService = BrandService
   }
 
