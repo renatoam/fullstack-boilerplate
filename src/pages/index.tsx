@@ -1,4 +1,5 @@
 import Card from '@components/DataDisplay/Card'
+import Logo from '@components/DataDisplay/Logo'
 import Showcase from '@components/DataDisplay/Showcase'
 import SearchField from '@components/DataEntry/SearchField'
 import Button from '@components/Foundation/Button'
@@ -7,16 +8,14 @@ import Heading from '@components/Foundation/Heading'
 import { FEATURED_PRODUCTS } from '@constants/global'
 import { ProductDataArray } from '@helpers/types'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import axiosInstance from '@services/axios'
+import { backendAxios as axios } from '@services/axios'
 import { StyledSection } from '@styles/pages/home'
 import { GetServerSidePropsContext } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const axios = axiosInstance('backend')
-  const products = await axios.get('/').then(response => response.data.products)
+  const products = await axios.get('/products').then(response => response.data)
 
   if (!products) {
     return {
@@ -40,7 +39,13 @@ export default function Home({ products }: { products: ProductDataArray }) {
   return (
     <Container direction="column">
       <Heading variant="h1">
-        <Image src="/images/just-logo.png" width={200} height={50} alt="Just Digital" />
+        <Logo
+          src={process.env.NEXT_PUBLIC_LOGOTIPO_PATH}
+          width={500}
+          height={'auto'}
+          alt={process.env.NEXT_PUBLIC_COMPANY_NAME}
+          href={process.env.NEXT_PUBLIC_COMPANY_LINK}
+        />
       </Heading>
 
       <StyledSection>

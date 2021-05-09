@@ -7,16 +7,15 @@ import { ProductData, ProductPageProps } from '@helpers/interfaces'
 import { usePagination } from '@hooks/usePagination'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Pagination from '@material-ui/lab/Pagination'
-import axiosInstance from '@services/axios'
+import { backendAxios as axios } from '@services/axios'
 import { StyledBodyContainer, StyledMain } from '@styles/pages/products'
 import { GetServerSidePropsContext } from 'next'
 import { useRouter } from 'next/router'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const axios = axiosInstance('backend')
   const filter = context.query.filter
-
-  const rawProducts = await axios.get('/').then(response => response.data.products)
+  // configurar Redux (saga?) aqui pra abstrair essa requisição e usar aqui e no back
+  const rawProducts = await axios.get('/products').then(response => response.data)
   const rawBrands = rawProducts.map((product: ProductData) => product.brand)
 
   const brands = [...new Set(rawBrands)]

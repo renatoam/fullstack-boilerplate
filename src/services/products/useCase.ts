@@ -1,4 +1,6 @@
-import { GetProductsType } from '@helpers/types'
+type GetProductsType = {
+  getProducts: (filter: string) => Promise<object[]>
+}
 
 export default class ProductUseCases {
   productService: GetProductsType

@@ -5,7 +5,7 @@ import { FALLBACK_IMAGEBIG } from '@constants/global'
 import { useCart } from '@context/cart'
 import { convertToCurrency } from '@helpers/handleString'
 import { ProductData } from '@helpers/interfaces'
-import axiosInstance from '@services/axios'
+import { backendAxios as axios } from '@services/axios'
 import { StyledSection } from '@styles/pages/details'
 import { GetStaticPropsContext } from 'next'
 import { useState } from 'react'
@@ -14,8 +14,7 @@ import { useState } from 'react'
 // MAS O BUILD TÁ DANDO ERRO, VERIFICAR
 
 export async function getStaticPaths() {
-  const axios = axiosInstance('backend')
-  const products = await axios.get('/').then(response => response.data.products)
+  const products = await axios.get('/products').then(response => response.data)
   const filteredProducts = products.filter((product: ProductData) => product.brand === 'Samsung')
   const productsPaths = filteredProducts.map((product: ProductData) => `/products/${product.id}`)
 
@@ -27,8 +26,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   const id = context?.params?.product
-  const axios = axiosInstance('backend')
-  const products = await axios.get('/').then(response => response.data.products)
+  const products = await axios.get('/products').then(response => response.data)
   const currentProduct = products.find((product: ProductData) => product.id.toString() === id)
 
   return {

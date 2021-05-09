@@ -90,11 +90,6 @@ export interface OptionsProps {
  * Media
  */
 
-export interface LogoProps {
-  invert?: boolean
-  href?: string
-}
-
 /**
  * Navigation
  */

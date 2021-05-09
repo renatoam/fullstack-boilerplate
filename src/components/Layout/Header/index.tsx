@@ -13,9 +13,7 @@ export default function Header() {
   const menuItems = MENU_OPTIONS.map(option => {
     return (
       <li key={option.id}>
-        <Link href={option.link}>
-          {option.label}
-        </Link>
+        <Link href={option.link}>{option.label}</Link>
       </li>
     )
   })
@@ -23,15 +21,11 @@ export default function Header() {
   return (
     <HeaderBox position="sticky">
       <Container>
-        <MenuMobile>
-          {menuItems}
-        </MenuMobile>
-        <Logo invert href="/" />
+        <MenuMobile>{menuItems}</MenuMobile>
+        <Logo invert href="/" width={50} height={50} />
 
         <Hidden smDown>
-          <FlexList>
-            {menuItems}
-          </FlexList>
+          <FlexList>{menuItems}</FlexList>
         </Hidden>
 
         <Flex>
