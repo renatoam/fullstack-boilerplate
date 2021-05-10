@@ -1,6 +1,6 @@
-import { GenericChildrenProps, ProductData, ProductShape } from '@helpers/interfaces';
-import { productUseCases } from '@services/products';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { GenericChildrenProps, ProductData, ProductShape } from '@helpers/interfaces'
+import { productUseCases } from '@services/products'
+import { createContext, useContext, useEffect, useState } from 'react'
 
 export const ProductContext = createContext<ProductShape>({
   products: [],
@@ -21,9 +21,7 @@ export const ProductsProvider = ({ children }: GenericChildrenProps) => {
   }, [])
 
   return (
-    <ProductContext.Provider value={{ products, getProducts }}>
-      {children}
-    </ProductContext.Provider>
+    <ProductContext.Provider value={{ products, getProducts }}>{children}</ProductContext.Provider>
   )
 }
 

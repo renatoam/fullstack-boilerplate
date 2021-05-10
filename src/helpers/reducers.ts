@@ -23,10 +23,7 @@ export function cartReducer(state: ProductData[], action: DispatchShape) {
       currentQuantity: 1
     }
 
-    return [
-      ...state,
-      newProduct
-    ]
+    return [...state, newProduct]
   }
 
   if (action.type === 'REMOVE') {
@@ -66,7 +63,8 @@ export function cartReducer(state: ProductData[], action: DispatchShape) {
     if (newQuantity > remainsProducts[currentProductIndex].stock) return
     if (newQuantity === 0) return remainsProducts
 
-    remainsProducts[currentProductIndex].stock = remainsProducts[currentProductIndex].quantity - newQuantity
+    remainsProducts[currentProductIndex].stock =
+      remainsProducts[currentProductIndex].quantity - newQuantity
     remainsProducts[currentProductIndex].currentQuantity = newQuantity
 
     return remainsProducts

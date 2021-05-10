@@ -1,27 +1,27 @@
 export const MENU_OPTIONS = [
   {
     id: '#001',
-    label: 'Como fazemos',
-    link: '/como-fazemos'
+    label: 'Sobre mim',
+    link: '/sobre-mim'
   },
   {
     id: '#002',
-    label: 'O que fazemos',
-    link: '/o-que-fazemos'
+    label: 'Experiência Profissional',
+    link: '/experiencias'
   },
   {
     id: '#003',
-    label: 'Soluções',
-    link: '/solucoes'
+    label: 'Freelancer',
+    link: '/freelancer'
   },
   {
     id: '#004',
-    label: 'Cases',
-    link: '/cases'
+    label: 'Challenges',
+    link: '/challenges'
   },
   {
     id: '#005',
-    label: 'Ideias e insights',
-    link: '/ideias-e-insights'
+    label: 'Estudos',
+    link: '/estudos'
   }
 ]
