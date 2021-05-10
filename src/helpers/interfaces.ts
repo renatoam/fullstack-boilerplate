@@ -119,18 +119,13 @@ export interface ProductData {
   chipType: string
   quantity: number
   stock: number
-  currentQuantity?: number
-  newQuantity?: number
+  currentQuantity: number
+  newQuantity: number
 }
 
 export interface DispatchShape {
   type: string
   payload: ProductData
-}
-
-export interface CartShape {
-  cart: ProductDataArray
-  dispatch: ({ type, payload }: DispatchShape) => void
 }
 
 export interface ProductShape {

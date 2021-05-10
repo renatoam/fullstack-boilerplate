@@ -1,5 +1,7 @@
+import { ProductData } from '@helpers/interfaces'
+
 type GetProductsType = {
-  getProducts: (filter: string) => Promise<object[]>
+  getProducts: (filter?: string) => Promise<ProductData[]>
 }
 
 export default class ProductUseCases {
@@ -9,7 +11,7 @@ export default class ProductUseCases {
     this.productService = ProductService
   }
 
-  async getProducts(filter: string) {
+  async getProducts(filter?: string) {
     return this.productService.getProducts(filter)
   }
 }
