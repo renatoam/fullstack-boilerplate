@@ -17,3 +17,9 @@ export type ProductDataArray = ProductData[]
 export type GetBrandsType = {
   getBrands: () => string[]
 }
+
+export type GetProductsType = {
+  getProducts: (filter?: string) => Promise<ProductDataArray>
+}
+
+export type RequestErrors = { [key: string]: string | { [key: string]: string }[] }

@@ -26,6 +26,8 @@
     "react/react-in-jsx-scope": "off",
     "semi": "off",
     "max-len": ["error", { "code": 100 }],
-    "multiline-ternary": "off"
+    "multiline-ternary": "off",
+    "generator-star-spacing": "off",
+    "react/no-unescaped-entities": "off"
   }
 }

@@ -1,10 +1,12 @@
 import Page from '@components/Layout/DefaultLayoutPage'
-import { CartProvider } from '@context/cart'
+import { AuthProvider } from '@context/auth'
 import { ProductsProvider } from '@context/products'
+import { store } from '@store/index'
 import { GlobalStyle } from '@styles/global'
 import { theme } from '@styles/themes'
 import { AppProps } from 'next/app'
 import NextNprogress from 'nextjs-progressbar'
+import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -19,13 +21,15 @@ export default function App({ Component, pageProps }: AppProps) {
         options={{ showSpinner: false }}
       />
       <ThemeProvider theme={theme}>
-        <ProductsProvider>
-          <CartProvider>
-            <Page>
-              <Component {...pageProps} />
-            </Page>
-          </CartProvider>
-        </ProductsProvider>
+        <Provider store={store}>
+          <AuthProvider>
+            <ProductsProvider>
+              <Page>
+                <Component {...pageProps} />
+              </Page>
+            </ProductsProvider>
+          </AuthProvider>
+        </Provider>
       </ThemeProvider>
     </>
   )

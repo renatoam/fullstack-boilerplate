@@ -128,6 +128,12 @@ export interface DispatchShape {
   payload: ProductData
 }
 
+export interface Action {
+  type: string
+  payload?: any
+  stateField: string
+}
+
 export interface ProductShape {
   products: ProductDataArray
   getProducts: (filter: string) => void
