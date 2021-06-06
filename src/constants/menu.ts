@@ -1,5 +1,10 @@
 export const MENU_OPTIONS = [
   {
+    id: '#000',
+    label: 'Blog',
+    link: '/blog'
+  },
+  {
     id: '#001',
     label: 'Sobre mim',
     link: '/sobre-mim'

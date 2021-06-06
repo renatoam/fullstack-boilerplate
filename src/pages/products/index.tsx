@@ -1,54 +1,62 @@
-import Card from '@components/DataDisplay/Card'
-import Showcase from '@components/DataDisplay/Showcase'
-import Filter from '@components/DataEntry/Filter'
-import Heading from '@components/Foundation/Heading'
-import { EMPTY_SEARCH, PRODUCTS_PER_PAGE } from '@constants/global'
-import { ProductData, ProductPageProps } from '@helpers/interfaces'
-import { usePagination } from '@hooks/usePagination'
-import CircularProgress from '@material-ui/core/CircularProgress'
-import Pagination from '@material-ui/lab/Pagination'
-import { backendAxios as axios } from '@services/axios'
-import { StyledBodyContainer, StyledMain } from '@styles/pages/products'
-import { GetServerSidePropsContext } from 'next'
-import { useRouter } from 'next/router'
+import { ProductPageProps } from '@helpers/interfaces'
+import { StyledMain } from '@styles/pages/products'
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const filter = context.query.filter
-  // configurar Redux (saga?) aqui pra abstrair essa requisição e usar aqui e no back
-  const rawProducts = await axios.get('/products').then(response => response.data)
-  const rawBrands = rawProducts.map((product: ProductData) => product.brand)
+// export async function getServerSideProps(context: GetServerSidePropsContext) {
+//   const { authToken: token } = parseCookies(context)
 
-  const brands = [...new Set(rawBrands)]
-  const products = filter
-    ? rawProducts.filter((product: ProductData) => product.brand === filter)
-    : rawProducts
+//   console.log('getServerSideProps', { token })
 
-  return {
-    props: {
-      brands: [...brands, 'Todos'],
-      products
-    }
-  }
-}
+//   if (!token) {
+//     return {
+//       redirect: {
+//         destination: '/login',
+//         permanent: false
+//       }
+//     }
+//   }
+
+//   console.log('Será?')
+
+//   const axios = backendAxios(context)
+//   const filter = context.query.filter
+
+//   // configurar Redux (saga?) aqui pra abstrair essa requisição e usar aqui e no back
+//   const rawProducts = await axios.get('/products').then(response => response.data)
+//   const rawBrands = rawProducts.map((product: ProductData) => product.brand)
+
+//   const brands = [...new Set(rawBrands)]
+//   const products = filter
+//     ? rawProducts.filter((product: ProductData) => product.brand === filter)
+//     : rawProducts
+
+//   return {
+//     props: {
+//       brands: [...brands, 'Todos'],
+//       products
+//     }
+//   }
+// }
 
 export default function Products(props: ProductPageProps) {
-  const { brands, products } = props
-  const router = useRouter()
-  const [currentProducts, handleChangePage] = usePagination<ProductData>({
-    items: products,
-    itemsPerPage: PRODUCTS_PER_PAGE
-  })
+  // const { brands, products } = props
 
-  if (!products) return <CircularProgress />
+  // const router = useRouter()
+  // const [currentProducts, handleChangePage] = usePagination<ProductData>({
+  //   items: products,
+  //   itemsPerPage: PRODUCTS_PER_PAGE
+  // })
 
-  function handleFilterCustomers(value: string) {
-    const filter = value !== 'Todos' ? `?filter=${value}` : ''
-    router.push(`/products${filter}`)
-  }
+  // function handleFilterCustomers(value: string) {
+  //   const filter = value !== 'Todos' ? `?filter=${value}` : ''
+  //   router.push(`/products${filter}`)
+  // }
+
+  // if (!products) return <CircularProgress />
 
   return (
     <StyledMain>
-      <Filter
+      <h1>Prodcut</h1>
+      {/* <Filter
         name="products"
         title="Filter by brand: "
         options={brands}
@@ -65,7 +73,7 @@ export default function Products(props: ProductPageProps) {
           )}
         </Showcase>
         <Pagination count={PRODUCTS_PER_PAGE} onChange={(_, page) => handleChangePage(page)} />
-      </StyledBodyContainer>
+      </StyledBodyContainer> */}
     </StyledMain>
   )
 }

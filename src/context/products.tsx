@@ -1,3 +1,4 @@
+import { useAuth } from '@context/auth'
 import { GenericChildrenProps, ProductData, ProductShape } from '@helpers/interfaces'
 import { productUseCases } from '@services/products'
 import { createContext, useContext, useEffect, useState } from 'react'
@@ -9,6 +10,7 @@ export const ProductContext = createContext<ProductShape>({
 
 export const ProductsProvider = ({ children }: GenericChildrenProps) => {
   const [products, setProducts] = useState<ProductData[]>([])
+  const { isAuthenticated } = useAuth()
 
   async function getProducts(filter?: string) {
     const response = await productUseCases.getProducts(filter)
@@ -17,7 +19,7 @@ export const ProductsProvider = ({ children }: GenericChildrenProps) => {
   }
 
   useEffect(() => {
-    getProducts()
+    if (isAuthenticated) getProducts()
   }, [])
 
   return (

@@ -1,29 +1,25 @@
-import { Card, WrapperCards } from '@styles/pages/freelancer'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
-
-interface Project {
-  id: number
-  title: string
-  image: string
-  link: string
-}
+// interface Project {
+//   id: number
+//   title: string
+//   image: string
+//   link: string
+// }
 
 export default function Freelancer() {
-  const [projects, setProjects] = useState([])
+  // const [projects, setProjects] = useState([])
 
-  useEffect(() => {
-    ;(async function () {
-      const response = await fetch('http://localhost:3004/projects').then(posts => posts.json())
+  // useEffect(() => {
+  //   ;(async function () {
+  //     const response = await fetch('http://localhost:3004/projects').then(posts => posts.json())
 
-      setProjects(response)
-    })()
-  }, [])
+  //     setProjects(response)
+  //   })()
+  // }, [])
 
   return (
     <>
       <h1>Freelancer</h1>
-      <p>Projetos pessoais e freelas</p>
+      {/* <p>Projetos pessoais e freelas</p>
       <WrapperCards>
         {projects.length &&
           projects.map((project: Project) => {
@@ -40,7 +36,7 @@ export default function Freelancer() {
               </Card>
             )
           })}
-      </WrapperCards>
+      </WrapperCards> */}
     </>
   )
 }

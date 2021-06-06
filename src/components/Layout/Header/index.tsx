@@ -7,6 +7,7 @@ import Link from '@components/Navigation/Link'
 import MenuMobile from '@components/Navigation/MenuHamburger'
 import { MENU_OPTIONS } from '@constants/menu'
 import Hidden from '@material-ui/core/Hidden'
+import Router from 'next/router'
 import { Flex, FlexList, HeaderBox } from './style'
 
 export default function Header() {
@@ -17,6 +18,10 @@ export default function Header() {
       </li>
     )
   })
+
+  function handleGoToLogin() {
+    Router.push('/signin')
+  }
 
   return (
     <HeaderBox position="sticky">
@@ -33,7 +38,9 @@ export default function Header() {
             <Social />
           </Hidden>
           <CartButton />
-          <User logged />
+          <div onClick={handleGoToLogin}>
+            <User logged />
+          </div>
         </Flex>
       </Container>
     </HeaderBox>

@@ -1,8 +1,4 @@
-import { ProductData } from '@helpers/interfaces'
-
-type GetProductsType = {
-  getProducts: (filter?: string) => Promise<ProductData[]>
-}
+import { GetProductsType } from '@helpers/types'
 
 export default class ProductUseCases {
   productService: GetProductsType
@@ -12,6 +8,9 @@ export default class ProductUseCases {
   }
 
   async getProducts(filter?: string) {
+    // const { response, error } = yield call(fetchProductsApi)
+    // Uma outra forma de pegar o erro de uma request (além do try/catch),
+    // caso de um objeto erro já vir do backend, é desestruturar a resposta
     return this.productService.getProducts(filter)
   }
 }
