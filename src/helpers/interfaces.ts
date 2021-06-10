@@ -1,4 +1,3 @@
-import { ProductDataArray } from '@helpers/types'
 import { ButtonProps, TypographyVariant } from '@material-ui/core'
 import React, { ReactNode } from 'react'
 
@@ -109,18 +108,18 @@ export interface SEOProps {
  */
 
 export interface ProductData {
-  id: number
-  title: string
-  price: number
-  picture: string
-  description: string
-  memory: string
+  url: string
+  productname: string
+  productid: string
+  listingprice: number
+  saleprice: number
+  discount: number
   brand: string
-  chipType: string
-  quantity: number
-  stock: number
-  currentQuantity: number
-  newQuantity: number
+  description: string
+  rating: number
+  reviews: number
+  images: string[]
+  lastvisited: string
 }
 
 export interface DispatchShape {
@@ -132,11 +131,6 @@ export interface Action {
   type: string
   payload?: any
   stateField: string
-}
-
-export interface ProductShape {
-  products: ProductDataArray
-  getProducts: (filter: string) => void
 }
 
 /**
@@ -158,16 +152,3 @@ export interface ErrorProps extends GenericChildrenProps {}
 export interface ErrorState {
   hasError: boolean
 }
-
-/**
- * Pages
- */
-
-export interface ProductPageProps {
-  brands: string[]
-  products: ProductDataArray
-}
-
-/**
- * Services
- */

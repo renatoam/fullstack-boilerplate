@@ -1,4 +1,4 @@
-import { frontendAxios } from '@services/axios'
+import axios from '@services/axios'
 import Router from 'next/router'
 import { parseCookies, setCookie } from 'nookies'
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
@@ -32,7 +32,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   async function signIn(data: SignInData) {
     const { email, password } = data
     const { token, user } = await signInRequest({ email, password })
-    const api = frontendAxios()
 
     /* por padrão, a funçpão setCookie recebe como primeiro parâmetro o contexto
      * da requisição, mas como nesse caso está sendo usada no browser, passamos undefined
@@ -42,11 +41,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       maxAge: 60 * 60 * 1 // 1 hour
     })
 
-    api.defaults.headers.Authorization = `Bearer ${token}`
+    axios.defaults.headers.Authorization = `Bearer ${token}`
 
     setUser(user)
 
-    Router.push('/products')
+    Router.push('/')
   }
 
   useEffect(() => {
