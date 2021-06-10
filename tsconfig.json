@@ -25,6 +25,7 @@
       "@services/*": ["./src/services/*"],
       "@styles/*": ["./src/styles/*"],
       "@store/*": ["./src/store/*"],
+      "@database/*": ["./src/database/*"],
       "@public/*": ["./public/*"]
     }
   },

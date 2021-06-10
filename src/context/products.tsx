@@ -1,11 +1,15 @@
 import { useAuth } from '@context/auth'
-import { GenericChildrenProps, ProductData, ProductShape } from '@helpers/interfaces'
+import { GenericChildrenProps, ProductData } from '@helpers/interfaces'
+import { ProductDataArray } from '@helpers/types'
 import { productUseCases } from '@services/products'
 import { createContext, useContext, useEffect, useState } from 'react'
 
-export const ProductContext = createContext<ProductShape>({
-  products: [],
-  getProducts: () => {}
+export interface ProductContextShape {
+  products: ProductDataArray
+}
+
+export const ProductContext = createContext<ProductContextShape>({
+  products: []
 })
 
 export const ProductsProvider = ({ children }: GenericChildrenProps) => {
@@ -22,9 +26,7 @@ export const ProductsProvider = ({ children }: GenericChildrenProps) => {
     if (isAuthenticated) getProducts()
   }, [])
 
-  return (
-    <ProductContext.Provider value={{ products, getProducts }}>{children}</ProductContext.Provider>
-  )
+  return <ProductContext.Provider value={{ products }}>{children}</ProductContext.Provider>
 }
 
 export const useProducts = () => useContext(ProductContext)
