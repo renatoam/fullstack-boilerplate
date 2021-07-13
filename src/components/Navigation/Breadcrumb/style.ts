@@ -1,7 +1,12 @@
 import styled from 'styled-components'
 
-export const StyledBreadcrumb = styled.section`
+interface IStyledBreadcrumb {
+  currentTheme?: string
+}
+
+export const StyledBreadcrumb = styled.section<IStyledBreadcrumb>`
   padding: 20px;
+  background-color: ${props => (!props.currentTheme ? 'inherit' : props.currentTheme)};
 
   p {
     color: #999;
