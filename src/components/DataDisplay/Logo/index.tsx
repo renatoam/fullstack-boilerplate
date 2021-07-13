@@ -13,11 +13,11 @@ interface LogoProps {
 }
 
 export default function Logo(props: LogoProps) {
-  const { src, width = 50, height = 50, invert, href, alt } = props
+  const { src, width = 50, height = 50, href, alt } = props
   const LOGO = src || LOGO_PATH
 
   return (
-    <StyledFigure invert={invert}>
+    <StyledFigure>
       <Link href={href}>
         <Image src={LOGO} width={width} height={height} layout="responsive" alt={alt} />
       </Link>
