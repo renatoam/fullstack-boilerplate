@@ -16,15 +16,15 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@context/*": ["./src/context/*"],
-      "@helpers/*": ["./src/helpers/*"],
-      "@hooks/*": ["./src/hooks/*"],
+      "@components/*": ["src/common/components/*"],
+      "@constants/*": ["src/common/constants/*"],
+      "@context/*": ["src/common/context/*"],
+      "@helpers/*": ["src/common/helpers/*"],
+      "@hooks/*": ["src/common/hooks/*"],
       "@pages/*": ["./src/pages/*"],
-      "@services/*": ["./src/services/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@store/*": ["./src/store/*"],
+      "@services/*": ["src/common/services/*"],
+      "@styles/*": ["src/common/styles/*"],
+      "@store/*": ["src/common/store/*"],
       "@database/*": ["./src/database/*"],
       "@public/*": ["./public/*"]
     }

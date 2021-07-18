@@ -1,11 +1,3 @@
-import FeaturedPost from '@components/DataDisplay/FeaturedPost'
-import MainFeaturedPost from '@components/DataDisplay/MainFeaturedPost'
-import FooterBlog from '@components/Layout/FooterBlog'
-import HeaderBlog from '@components/Layout/HeaderBlog'
-import Main from '@components/Layout/MainSection'
-import Sidebar from '@components/Navigation/Sidebar'
-import { featuredPosts, mainFeaturedPost, sections, sidebar } from '@constants/posts'
-import { getPosts } from '@helpers/posts'
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
@@ -13,6 +5,19 @@ import { makeStyles } from '@material-ui/core/styles'
 import { GetServerSidePropsContext } from 'next'
 import remark from 'remark'
 import html from 'remark-html'
+import FooterBlog from 'src/layout/articles/footer'
+import HeaderBlog from 'src/layout/articles/header'
+import Main from 'src/layout/articles/main'
+import Sidebar from 'src/layout/articles/Sidebar'
+import FeaturedPost from 'src/modules/blog/components/FeaturedPost'
+import MainFeaturedPost from 'src/modules/blog/components/MainFeaturedPost'
+import {
+  featuredPosts,
+  mainFeaturedPost,
+  sections,
+  sidebar
+} from 'src/modules/blog/constants/posts'
+import { getPosts } from 'src/modules/blog/helpers/posts'
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {

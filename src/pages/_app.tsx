@@ -1,12 +1,12 @@
-import Page from '@components/Layout/DefaultLayoutPage'
-import { AuthProvider } from '@context/auth'
-import { ProductsProvider } from '@context/products'
-import { store } from '@store/index'
-import { GlobalStyle } from '@styles/global'
-import { theme } from '@styles/themes'
 import { AppProps } from 'next/app'
 import NextNprogress from 'nextjs-progressbar'
 import { Provider } from 'react-redux'
+import { GlobalStyle } from 'src/app/styles/global'
+import { theme } from 'src/app/styles/themes'
+import { store } from 'src/common/store/index'
+import Layout from 'src/layout/default'
+import { AuthProvider } from 'src/modules/auth/contexts/auth'
+import { ProductsProvider } from 'src/modules/commerce/contexts/products'
 import { ThemeProvider } from 'styled-components'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -24,9 +24,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <Provider store={store}>
           <AuthProvider>
             <ProductsProvider>
-              <Page>
+              <Layout>
                 <Component {...pageProps} />
-              </Page>
+              </Layout>
             </ProductsProvider>
           </AuthProvider>
         </Provider>

@@ -1,5 +1,5 @@
-import Hero from '@components/DataDisplay/Hero'
-import Social from '@components/DataDisplay/Social'
+import Social from 'src/common/components/DataDisplay/Social'
+import Hero from 'src/modules/home/components/Hero'
 import styled from 'styled-components'
 
 // TODO: refatorar isso com Compound Components
