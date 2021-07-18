@@ -2,10 +2,22 @@ import { DefaultTheme } from 'styled-components'
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: '#222F2F',
-    secondary: '#00DDDD',
-    primaryHover: '#2E4141',
-    secondaryHover: '#05ACAC'
+    primary: '#00DDDD',
+    secondary: '#222F2F',
+    primaryHover: '#05ACAC',
+    secondaryHover: '#2E4141',
+    backgroundDark: '#1e272e',
+    backgroundLight: '#ecf0f1',
+    textPrimary: '#ecf0f1',
+    textSecondary: '#1e272e'
+  },
+  sizes: {
+    xsmall: '0.4rem',
+    small: '0.7rem',
+    normal: '1rem',
+    large: '1.5rem',
+    xlarge: '2rem',
+    xxlarge: '3rem'
   },
   images: {
     logo: {
@@ -20,3 +32,5 @@ export const theme: DefaultTheme = {
     }
   }
 }
+
+// Paleta: https://flatuicolors.com/palette/se

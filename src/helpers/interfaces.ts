@@ -1,4 +1,4 @@
-import { ButtonProps, TypographyVariant } from '@material-ui/core'
+import { ButtonProps } from '@material-ui/core'
 import React, { ReactNode } from 'react'
 
 /**
@@ -37,15 +37,6 @@ export interface ControlButtonProps {
   error: string
 }
 
-export interface MuiTypographyVariantProps {
-  variant?: TypographyVariant
-  children: ReactNode
-}
-
-export interface HeadingProps extends MuiTypographyVariantProps {
-  component?: ReactNode
-  clamp?: number
-}
 /**
  * Data Display
  */

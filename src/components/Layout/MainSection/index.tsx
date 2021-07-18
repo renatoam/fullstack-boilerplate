@@ -27,7 +27,6 @@ export default function Main(props: IMain) {
       </Typography>
       <Divider />
       {posts.map(post => {
-        console.log({ post })
         return (
           <Markdown className={classes.markdown} key={post.substring(0, 40)}>
             {post}

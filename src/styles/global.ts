@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { theme } from './themes'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -15,42 +16,12 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 
-  a {
-    color: inherit;
+  body {
+    background-color: ${theme.colors.backgroundDark} !important;
+    // depois sobrescrever o css baseline do Material, ai posso tirar o important
   }
 
-  .centered {
-    display: flex;
-
-    &.margin {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    &.position {
-      transform: translate(-50%, -50%);
-
-      &.x {
-        left: 50%;
-      }
-
-      &.y {
-        top: 50%;
-      }
-
-      &.full {
-        left: 50%;
-        top: 50%;
-      }
-    }
-
-    &.children {
-      justify-content: center;
-      align-items: center;
-
-      &.column {
-        flex-direction: column;
-      }
-    }
+  a {
+    color: inherit;
   }
 `

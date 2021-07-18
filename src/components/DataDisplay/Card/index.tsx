@@ -16,13 +16,13 @@ interface CardProps {
 }
 
 export default function Card({ data }: CardProps) {
-  const { id, title, price, picture } = data
+  const { productid, saleprice, productname, images } = data
 
   const { cart } = useAppSelector(selectCart)
   const dispatch = useAppDispatch()
   const [action, setAction] = useState<ActionType>('ADD')
 
-  const formattedPrice = convertToCurrency(price)
+  const formattedPrice = convertToCurrency(saleprice)
 
   const buttonText: ActionButtonTextShape = {
     REMOVEALL: 'REMOVE FROM CART',
@@ -41,7 +41,7 @@ export default function Card({ data }: CardProps) {
 
   useEffect(() => {
     const currentProductIndex = cart.findIndex(product => {
-      return product.id === id
+      return product.productid === productid
     })
 
     if (currentProductIndex > -1) setAction('REMOVEALL')
@@ -50,12 +50,10 @@ export default function Card({ data }: CardProps) {
 
   return (
     <StyledCard>
-      <Link href={`/products/${id}`}>
-        <Image src={picture} width={150} height={150} variant="circle" />
+      <Link href={`/products/${productid}`}>
+        <Image src={images[0]} width={150} height={150} variant="circle" />
       </Link>
-      <Heading variant="h3" clamp={3}>
-        {title}
-      </Heading>
+      <Heading level={2}>{productname}</Heading>
       <Text>{formattedPrice}</Text>
       <BuyButton action={action} handleClick={handleAddingRemovingItems}>
         {buttonText[action]}
