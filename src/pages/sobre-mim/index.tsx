@@ -123,7 +123,7 @@ export default function AboutMe() {
         <div className={classes.heroContent}>
           <Container className={classes.heroContainer}>
             <figure className={classes.heroImage}>
-              <img src="/profile-pic.png" alt="Renato Melo" />
+              <img src="/images/profile-pic.png" alt="Renato Melo" />
             </figure>
             <div className={classes.heroText}>
               <Typography

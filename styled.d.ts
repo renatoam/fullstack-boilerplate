@@ -8,6 +8,18 @@ declare module 'styled-components' {
       secondary: string
       primaryHover: string
       secondaryHover: string
+      backgroundDark: string
+      backgroundLight: string
+      textPrimary: string
+      textSecondary: string
+    }
+    sizes: {
+      xsmall: string
+      small: string
+      normal: string
+      large: string
+      xlarge: string
+      xxlarge: string
     }
     images: {
       logo: {

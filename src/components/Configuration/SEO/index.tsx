@@ -1,12 +1,7 @@
 import { SEOProps } from '@helpers/interfaces'
 
 export default function SEO(props: SEOProps) {
-  const { 
-    title,
-    description,
-    image,
-    shouldIndexPage = true
-  } = props
+  const { title, description, image, shouldIndexPage = true } = props
 
   return (
     <>

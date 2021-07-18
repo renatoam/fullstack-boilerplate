@@ -1,20 +1,20 @@
-import ControlButton from '@components/Foundation/ControlButton';
-import Heading from '@components/Foundation/Heading';
-import Text from '@components/Foundation/Text';
-import Image from '@components/Media/Image';
-import Link from '@components/Navigation/Link';
-import { useCart } from '@context/cart';
-import { convertToCurrency } from '@helpers/handleString';
-import { ProductData } from '@helpers/interfaces';
-import { useState } from 'react';
-import { StyledCard } from './style';
+import ControlButton from '@components/Foundation/ControlButton'
+import Heading from '@components/Foundation/Heading'
+import Text from '@components/Foundation/Text'
+import Image from '@components/Media/Image'
+import Link from '@components/Navigation/Link'
+import { useCart } from '@context/cart'
+import { convertToCurrency } from '@helpers/handleString'
+import { ProductData } from '@helpers/interfaces'
+import { useState } from 'react'
+import { StyledCard } from './style'
 
 export default function CartCard({ data }: { data: ProductData }) {
   const { dispatch } = useCart()
-  const { id, title, price, picture, currentQuantity = 0 } = data
-  const [value, setValue] = useState(currentQuantity)
-  const [error, setError] = useState('')
-  const formattedPrice = convertToCurrency(price)
+  const { productid, productname, saleprice, images } = data
+  const [value, setValue] = useState(0)
+  const [error] = useState('')
+  const formattedPrice = convertToCurrency(saleprice)
 
   function handleDispatchAction(action: string) {
     const newValue = action === 'ADD' ? value + 1 : value - 1
@@ -27,8 +27,8 @@ export default function CartCard({ data }: { data: ProductData }) {
     dispatch({
       type: 'CHANGE',
       payload: {
-        ...data,
-        newQuantity: value
+        ...data
+        // newQuantity: value
       }
     })
     setValue(value)
@@ -37,10 +37,10 @@ export default function CartCard({ data }: { data: ProductData }) {
   function handleAddingItems(idAction: string) {
     const action = idAction.toUpperCase()
 
-    if (data.stock === 0) {
-      setError('Estoque zerado')
-      return
-    }
+    // if (data.stock === 0) {
+    //   setError('Estoque zerado')
+    //   return
+    // }
 
     handleDispatchAction(action)
   }
@@ -53,20 +53,11 @@ export default function CartCard({ data }: { data: ProductData }) {
 
   return (
     <StyledCard>
-      <Link href={`/products/${id}`}>
-        <Image
-          src={picture}
-          width={90}
-          height={90}
-          variant="circle"
-        />
+      <Link href={`/products/${productid}`}>
+        <Image src={images[0]} width={90} height={90} variant="circle" />
       </Link>
-      <Heading variant="h3" clamp={2}>
-        {title}
-      </Heading>
-      <Text>
-        {formattedPrice}
-      </Text>
+      <Heading level={3}>{productname}</Heading>
+      <Text>{formattedPrice}</Text>
       <ControlButton
         value={value}
         error={error}
