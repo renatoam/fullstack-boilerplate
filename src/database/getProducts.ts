@@ -1,4 +1,4 @@
-import { handleNormalizeObject } from '@helpers/handleObject'
+import { handleNormalizeObject } from 'src/common/helpers/handleObject'
 import { connectToDatabase } from '.'
 
 export async function getProducts(limit: number) {
