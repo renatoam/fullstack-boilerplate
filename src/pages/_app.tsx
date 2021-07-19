@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import NextNprogress from 'nextjs-progressbar'
 import { Provider } from 'react-redux'
+import 'src/app/helpers/translate'
 import { GlobalStyle } from 'src/app/styles/global'
 import { theme } from 'src/app/styles/themes'
 import { store } from 'src/common/store/index'
