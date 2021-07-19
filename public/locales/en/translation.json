@@ -1,0 +1,25 @@
+{
+  "app": {
+    "hello": "Hello, World!"
+  },
+  "common": {
+    "test": "Test"
+  },
+  "layout": {
+    "header": "Header (teste)"
+  },
+  "modules": {
+    "about": {
+      "who": "Who I am"
+    },
+    "auth": {},
+    "blog": {},
+    "commerce": {},
+    "home": {},
+    "projects": {},
+    "study": {}
+  },
+  "pages": {
+    "page": "Page (teste)"
+  }
+}

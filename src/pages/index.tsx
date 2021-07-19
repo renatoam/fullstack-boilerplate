@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import Social from 'src/common/components/DataDisplay/Social'
 import Hero from 'src/modules/home/components/Hero'
 import styled from 'styled-components'
@@ -374,6 +375,8 @@ const Portfolio = styled('section')`
 `
 
 export default function Home() {
+  const { t } = useTranslation()
+
   return (
     <>
       <Hero>
@@ -386,7 +389,7 @@ export default function Home() {
       </Hero>
       <About className="about">
         <section className="title">
-          <h2>Quem sou eu</h2>
+          <h2>{t('modules.about.who')}</h2>
           <p>Se você é um desenvolvedor e precisa de ajuda, eu quero te ajudar.</p>
           <p>Se você é tem um negócio e precisa de um desenvolvedor, eu quero te ajudar.</p>
         </section>

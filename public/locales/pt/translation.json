@@ -1,0 +1,25 @@
+{
+  "app": {
+    "hello": "Olá, Mundo!"
+  },
+  "common": {
+    "test": "Teste"
+  },
+  "layout": {
+    "header": "Cabeçalho (teste)"
+  },
+  "modules": {
+    "about": {
+      "who": "Quem sou eu"
+    },
+    "auth": {},
+    "blog": {},
+    "commerce": {},
+    "home": {},
+    "projects": {},
+    "study": {}
+  },
+  "pages": {
+    "page": "Página (teste)"
+  }
+}
