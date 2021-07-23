@@ -1,4 +1,4 @@
-import { GetProductsType } from 'src/common/types/types'
+import { GetProductsType } from '../../types/types'
 
 export default class ProductUseCases {
   productService: GetProductsType

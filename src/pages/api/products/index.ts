@@ -1,9 +1,9 @@
-import { getProducts } from '@database/getProducts'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { handleProducts } from 'src/modules/commerce/helpers/handleProducts'
 
 export default async function products(request: NextApiRequest, response: NextApiResponse) {
   try {
-    const products = await getProducts(20)
+    const products = await handleProducts.getProducts(20)
 
     response.status(200).json(products)
   } catch (error) {
