@@ -1,6 +1,6 @@
-import { getProducts } from '@database/getProducts'
 import { CircularProgress } from '@material-ui/core'
 import { StyledMain } from 'src/app/styles/pages/products'
+import { handleProducts } from 'src/modules/commerce/helpers/handleProducts'
 import { ProductDataArray } from 'src/modules/commerce/types/types'
 
 export interface ProductPageProps {
@@ -8,7 +8,7 @@ export interface ProductPageProps {
 }
 
 export async function getServerSideProps() {
-  const products = await getProducts(10)
+  const products = await handleProducts.getProducts(10)
 
   return {
     props: {

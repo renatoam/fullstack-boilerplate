@@ -1,5 +1,4 @@
-import { handleNormalizeObject } from 'src/common/helpers/handleObject'
-import { connectToDatabase } from '.'
+import { connectToDatabase } from './connection'
 
 export async function getProducts(limit: number) {
   const { db, client } = await connectToDatabase()
@@ -14,5 +13,5 @@ export async function getProducts(limit: number) {
     .limit(limit)
     .toArray()
 
-  return handleNormalizeObject(products)
+  return products
 }

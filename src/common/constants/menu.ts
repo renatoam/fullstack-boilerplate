@@ -62,6 +62,11 @@ export const MENU_OPTIONS = [
   },
   {
     id: '#005',
+    label: 'UX/UI',
+    link: '/uxui'
+  },
+  {
+    id: '#006',
     label: 'Contratar',
     link: '/hire'
   }

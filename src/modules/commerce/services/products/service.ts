@@ -1,5 +1,5 @@
-import { GetProductsType } from 'src/common/types/types'
 import axios from '../../../../common/services/axios'
+import { GetProductsType } from '../../types/types'
 
 export const ProductService: GetProductsType = {
   async getProducts(filter: string | undefined) {
