@@ -4,7 +4,7 @@ import Hero from 'src/modules/home/components/Hero'
 import styled from 'styled-components'
 
 // TODO: refatorar isso com Compound Components
-// Usar componente Heading para os titules
+// Usar componente Heading para os titulos
 const About = styled('section')`
   display: flex;
   flex-direction: column;
@@ -13,9 +13,11 @@ const About = styled('section')`
   height: calc(100vh - 80px);
   text-align: center;
   color: ${props => props.theme.colors.textPrimary};
-  margin: 20px 0;
+  margin: 4rem 0;
 
   & > .title {
+    margin-bottom: 2rem;
+
     h2 {
       font-size: ${props => props.theme.sizes.xlarge};
     }
@@ -51,6 +53,8 @@ const About = styled('section')`
   .description {
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
+
     p {
       font-size: ${props => props.theme.sizes.large};
       width: 50%;
@@ -85,10 +89,12 @@ const Blog = styled('section')`
   height: calc(100vh - 80px);
   color: ${props => props.theme.colors.textPrimary};
   text-align: center;
-  margin: 20px 0;
+  margin: 4rem 0;
 
   .title {
     color: white;
+    margin-bottom: 2rem;
+
     h2 {
       font-size: ${props => props.theme.sizes.xlarge};
     }
@@ -106,6 +112,7 @@ const Blog = styled('section')`
     width: 60%;
     max-height: 350px;
     height: 100%;
+    margin-bottom: 2rem;
   }
 
   .card {
@@ -200,8 +207,8 @@ const Study = styled('section')`
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: calc(100vh - 80px);
-  margin: 20px 0;
+  height: clamp(700px, calc(100vh - 80px), 100vh);
+  margin: 4rem 0;
   justify-content: space-evenly;
 
   .title {
@@ -289,11 +296,13 @@ const Portfolio = styled('section')`
   flex-direction: column;
   text-align: center;
   height: calc(100vh - 80px);
-  margin: 20px 0;
+  margin: 4rem 0;
   justify-content: space-evenly;
 
   .title {
     color: white;
+    margin-bottom: 2rem;
+
     h2 {
       font-size: ${props => props.theme.sizes.xlarge};
     }
@@ -312,7 +321,7 @@ const Portfolio = styled('section')`
     > section {
       display: flex;
       justify-content: center;
-      width: 80%;
+      width: 90%;
       height: 50%;
 
       .description,
@@ -391,7 +400,7 @@ export default function Home() {
         <section className="title">
           <h2>{t('modules.about.who')}</h2>
           <p>Se você é um desenvolvedor e precisa de ajuda, eu quero te ajudar.</p>
-          <p>Se você é tem um negócio e precisa de um desenvolvedor, eu quero te ajudar.</p>
+          <p>Se você tem um negócio e precisa de um desenvolvedor, eu quero te ajudar.</p>
         </section>
         <section className="picture">
           <figure className="avatar">
@@ -403,9 +412,9 @@ export default function Home() {
         </section>
         <section className="description">
           <p>
-            Front-End Developer completely in love with the profession, I discovered that one of my
-            favorite hobbies - and I have many - is to study programming. Today, I consider myself a
-            web development evangelist.
+            Front-End Developer fully in love with my profession, I discovered that one of my
+            favorite hobbies - and I have a lot of them - is to study programming. Today, I see
+            myself as a web development evangelist.
           </p>
         </section>
         <section className="know-more">

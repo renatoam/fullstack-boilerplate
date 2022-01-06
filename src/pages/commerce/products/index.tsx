@@ -1,7 +1,8 @@
-import { CircularProgress } from '@material-ui/core'
 import { StyledMain } from 'src/app/styles/pages/products'
 import { handleProducts } from 'src/modules/commerce/helpers/handleProducts'
 import { ProductDataArray } from 'src/modules/commerce/types/types'
+
+import { CircularProgress } from '@material-ui/core'
 
 export interface ProductPageProps {
   products: ProductDataArray
@@ -28,7 +29,7 @@ export default function Products(props: ProductPageProps) {
         return (
           <section key={product.productid}>
             <ul>
-              {Object.keys(product).map(key => {
+              {Object.values(product).map(key => {
                 return <li key={key}>{key}</li>
               })}
             </ul>
