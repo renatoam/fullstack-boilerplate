@@ -1,6 +1,6 @@
 # Next JS Boilerplate
 
-Aplicação criada como teste para o processo seletivo da Just Digital. A aplicação é desenvolvida com React, utilizando o NextJS como framework.
+Aplicação criada para servir de base para projetos futuros e para que eu possa testar novas ferramentas, padrões, etc.
 
 ## Executando a aplicação
 
