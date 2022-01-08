@@ -1,8 +1,9 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { GenericChildrenProps, ProductData } from 'src/common/types/interfaces'
 import { ProductDataArray } from 'src/common/types/types'
-import { useAuth } from 'src/modules/auth/contexts/auth'
-import { productUseCases } from 'src/modules/commerce/services/products'
+
+import { useAuth } from '@modules/auth/contexts/auth'
+import { productUseCases } from '@modules/commerce/services/products'
 
 export interface ProductContextShape {
   products: ProductDataArray

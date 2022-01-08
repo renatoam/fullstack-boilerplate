@@ -1,10 +1,11 @@
-import { call, put, takeEvery } from 'redux-saga/effects'
-import { ProductData } from 'src/common/types/interfaces'
-import { ProductService } from 'src/modules/commerce/services/products/service'
+import { call, put, takeEvery } from 'redux-saga/effects';
+import { ProductData } from 'src/common/types/interfaces';
+
+import { ProductService } from '@modules/commerce/services/products/service';
+
 import {
-  fetchProductsFailure,
-  fetchProductsSuccess
-} from '../../modules/commerce/store/productsSlice'
+    fetchProductsFailure, fetchProductsSuccess
+} from '../../modules/commerce/store/productsSlice';
 
 function* fetchProductsSaga(action: any) {
   try {

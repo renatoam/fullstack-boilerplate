@@ -2,7 +2,7 @@ import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import Markdown from 'src/modules/blog/components/Markdown'
+import Markdown from '@modules/blog/components/Markdown'
 
 const useStyles = makeStyles(theme => ({
   markdown: {

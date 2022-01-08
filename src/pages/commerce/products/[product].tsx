@@ -1,5 +1,5 @@
-import Container from 'src/common/components/Foundation/Container'
-import { ProductData } from 'src/modules/commerce/types/interfaces'
+import Container from '@components/Foundation/Container'
+import { ProductData } from '@modules/commerce/types/interfaces'
 
 // PARECE QUE SÓ CONSIGO TESTAR ESSAS COISAS RODANDO O BUILD
 // MAS O BUILD TÁ DANDO ERRO, VERIFICAR

@@ -1,14 +1,16 @@
+import 'src/app/helpers/translate'
+
 import { AppProps } from 'next/app'
 import NextNprogress from 'nextjs-progressbar'
 import { Provider } from 'react-redux'
-import 'src/app/helpers/translate'
 import { GlobalStyle } from 'src/app/styles/global'
 import { theme } from 'src/app/styles/themes'
 import { store } from 'src/common/store/index'
 import Layout from 'src/layout/default'
-import { AuthProvider } from 'src/modules/auth/contexts/auth'
-import { ProductsProvider } from 'src/modules/commerce/contexts/products'
 import { ThemeProvider } from 'styled-components'
+
+import { AuthProvider } from '@modules/auth/contexts/auth'
+import { ProductsProvider } from '@modules/commerce/contexts/products'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

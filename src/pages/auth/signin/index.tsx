@@ -1,3 +1,5 @@
+import { useForm } from 'react-hook-form'
+
 import Avatar from '@material-ui/core/Avatar'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
@@ -11,8 +13,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
-import { useForm } from 'react-hook-form'
-import { SignInData, useAuth } from 'src/modules/auth/contexts/auth'
+import { SignInData, useAuth } from '@modules/auth/contexts/auth'
 
 const useStyles = makeStyles(theme => ({
   paper: {

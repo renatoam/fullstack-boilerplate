@@ -1,8 +1,8 @@
 import { StyledMain } from 'src/app/styles/pages/products'
-import { handleProducts } from 'src/modules/commerce/helpers/handleProducts'
-import { ProductDataArray } from 'src/modules/commerce/types/types'
 
 import { CircularProgress } from '@material-ui/core'
+import { handleProducts } from '@modules/commerce/helpers/handleProducts'
+import { ProductDataArray } from '@modules/commerce/types/types'
 
 export interface ProductPageProps {
   products: ProductDataArray

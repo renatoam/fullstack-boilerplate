@@ -1,8 +1,10 @@
 /* eslint-disable max-len */
-// import { motion } from 'framer-motion'
-import Image from 'src/common/components/Media/Image'
-import Link from 'src/common/components/Navigation/Link'
 import { LOGO_PATH } from 'src/common/constants/global'
+
+// import { motion } from 'framer-motion'
+import Image from '@components/Media/Image'
+import Link from '@components/Navigation/Link'
+
 import { StyledFigure } from './style'
 
 interface LogoProps {

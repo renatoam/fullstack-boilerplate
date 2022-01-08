@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import Heading from 'src/common/components/Foundation/Heading'
-import Text from 'src/common/components/Foundation/Text'
-import Image from 'src/common/components/Media/Image'
-import Link from 'src/common/components/Navigation/Link'
 import { convertToCurrency } from 'src/common/helpers/handleString'
 import { ProductData } from 'src/common/types/interfaces'
-import ControlButton from 'src/modules/commerce/components/ControlButton'
-import { useCart } from 'src/modules/commerce/contexts/cart'
+
+import Heading from '@components/Foundation/Heading'
+import Text from '@components/Foundation/Text'
+import Image from '@components/Media/Image'
+import Link from '@components/Navigation/Link'
+import ControlButton from '@modules/commerce/components/ControlButton'
+import { useCart } from '@modules/commerce/contexts/cart'
+
 import { StyledCard } from './style'
 
 export default function CartCard({ data }: { data: ProductData }) {

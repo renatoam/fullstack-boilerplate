@@ -1,7 +1,9 @@
-import Radio from '@material-ui/core/Radio'
 import { useState } from 'react'
-import Heading from 'src/common/components/Foundation/Heading'
 import { FilterProps } from 'src/common/types/interfaces'
+
+import Heading from '@components/Foundation/Heading'
+import Radio from '@material-ui/core/Radio'
+
 import { StyledBox, StyledFilterContainer } from './style'
 
 export default function Filter(props: FilterProps) {

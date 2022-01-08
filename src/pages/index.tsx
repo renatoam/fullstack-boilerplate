@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
-import Social from 'src/common/components/DataDisplay/Social'
-import Hero from 'src/modules/home/components/Hero'
 import styled from 'styled-components'
+
+import Social from '@components/DataDisplay/Social'
+import Hero from '@modules/home/components/Hero'
 
 // TODO: refatorar isso com Compound Components
 // Usar componente Heading para os titulos

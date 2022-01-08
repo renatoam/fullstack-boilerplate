@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react'
-import Heading from 'src/common/components/Foundation/Heading'
-import Text from 'src/common/components/Foundation/Text'
-import Image from 'src/common/components/Media/Image'
-import Link from 'src/common/components/Navigation/Link'
 import { convertToCurrency } from 'src/common/helpers/handleString'
 import { useAppDispatch, useAppSelector } from 'src/common/hooks/redux'
 import { ActionButtonTextShape, ProductData } from 'src/common/types/interfaces'
 import { ActionType } from 'src/common/types/types'
-import BuyButton from 'src/modules/commerce/components/BuyButton'
-import { decrement, increment, selectCart } from 'src/modules/commerce/store/cartSlice'
+
+import Heading from '@components/Foundation/Heading'
+import Text from '@components/Foundation/Text'
+import Image from '@components/Media/Image'
+import Link from '@components/Navigation/Link'
+import BuyButton from '@modules/commerce/components/BuyButton'
+import { decrement, increment, selectCart } from '@modules/commerce/store/cartSlice'
+
 import { StyledCard } from './style'
 
 interface CardProps {

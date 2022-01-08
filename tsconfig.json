@@ -51,6 +51,9 @@
       "@database/*": [
         "./src/database/*"
       ],
+      "@modules/*": [
+        "./src/modules/*"
+      ],
       "@public/*": [
         "./public/*"
       ]

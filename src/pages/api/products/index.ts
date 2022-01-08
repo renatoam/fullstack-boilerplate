@@ -1,5 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import { handleProducts } from 'src/modules/commerce/helpers/handleProducts'
+import { NextApiRequest, NextApiResponse } from 'next';
+
+import { handleProducts } from '@modules/commerce/helpers/handleProducts';
 
 export default async function products(request: NextApiRequest, response: NextApiResponse) {
   try {

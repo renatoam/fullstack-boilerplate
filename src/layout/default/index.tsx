@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import { ReactNode } from 'react'
-import ErrorBoundary from 'src/common/components/Configuration/Error'
-import SEO from 'src/common/components/Configuration/SEO'
 import { DESCRIPTION, IMAGE, TITLE_PAGE } from 'src/common/constants/global'
 import Breadcrumb from 'src/layout/core/Breadcrumb'
+
+import ErrorBoundary from '@components/Configuration/Error'
+import SEO from '@components/Configuration/SEO'
+
 import Footer from '../core/Footer'
 import Header from '../core/Header'
 import { StyledMain } from './style'
