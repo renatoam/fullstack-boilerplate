@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb'
+import { MongoClient } from 'mongodb';
 
 const MONGODB_URI = process.env.MONGODB_URI || ''
 const MONGODB_DB = process.env.MONGODB_DB
@@ -25,12 +25,14 @@ export async function connectToDatabase() {
     return { client: cachedClient, db: cachedDb }
   }
 
-  const options = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
+  // const options = {
+  //   useNewUrlParser: true,
+  //   useUnifiedTopology: true
+  // }
 
-  const client = await MongoClient.connect(MONGODB_URI, options)
+  const client = await MongoClient.connect(MONGODB_URI)
+  // const client = await MongoClient.connect(MONGODB_URI, 
+  // (_error: any, _results: any) => {}, options)
 
   const db = client.db(MONGODB_DB)
 

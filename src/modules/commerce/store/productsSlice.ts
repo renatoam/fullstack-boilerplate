@@ -1,9 +1,11 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ProductDataArray, RequestErrors } from 'src/common/types/types'
-import { RootState } from '../../../common/store'
+import { RequestErrors } from 'src/common/types/types';
+
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { RootState } from '../../../common/store';
 
 interface ProductsShape {
-  data: ProductDataArray | undefined
+  data: any | undefined
   errors: RequestErrors | undefined
 }
 
@@ -16,7 +18,7 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    fetchProductsSuccess: (state, action?: PayloadAction<ProductDataArray>) => {
+    fetchProductsSuccess: (state, action?: PayloadAction<any>) => {
       state.data = action?.payload
     },
     fetchProductsFailure: (state, action?: PayloadAction<RequestErrors>) => {

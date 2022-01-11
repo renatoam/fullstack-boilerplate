@@ -1,5 +1,4 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { ProductData } from 'src/common/types/interfaces';
 
 import { ProductService } from '@modules/commerce/services/products/service';
 
@@ -9,12 +8,12 @@ import {
 
 function* fetchProductsSaga(action: any) {
   try {
-    const response: ProductData[] = yield call(ProductService.getProducts, action?.payload)
+    const response: any[] = yield call(ProductService.getProducts, action?.payload)
 
     yield put(fetchProductsSuccess(response))
   } catch (error) {
     console.log({ error })
-    yield put(fetchProductsFailure(error))
+    yield put(fetchProductsFailure({error: String(error)}))
   }
 }
 

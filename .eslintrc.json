@@ -27,5 +27,6 @@
     "multiline-ternary": "off",
     "generator-star-spacing": "off",
     "react/no-unescaped-entities": "off"
-  }
+  },
+  "ignorePatterns": ["*.d.ts"]
 }

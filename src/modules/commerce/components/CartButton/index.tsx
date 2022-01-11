@@ -1,14 +1,11 @@
 import Router from 'next/router'
 import { useState } from 'react'
-import { EMPTY_CART, EMPTY_CART_ICON } from 'src/common/constants/global'
 
-import Image from '@components/Media/Image'
 import IconButton from '@material-ui/core/IconButton'
 import ShoppingCart from '@material-ui/icons/ShoppingCart'
 import CartCard from '@modules/commerce/components/CartCard'
 import { useCart } from '@modules/commerce/contexts/cart'
 
-import Heading from '../../../../common/components/Foundation/Heading'
 import { Badge, StyledDrawer } from './style'
 
 export default function CartButton() {
@@ -32,13 +29,16 @@ export default function CartButton() {
       </IconButton>
       <StyledDrawer anchor="right" open={menuDisplay} onClose={() => setMenuDisplay(false)}>
         {cart.length ? (
-          cart.map((product, index) => {
+          cart.map((product: any, index: any) => {
             return <CartCard key={index} data={product} />
           })
         ) : (
           <>
-            <Heading level={2}>{EMPTY_CART}</Heading>
-            <Image src={EMPTY_CART_ICON} width={20} height={20} layout="responsive" />
+            {/* <Heading level={2}>{EMPTY_CART}</Heading> */}
+            {/* <Image
+            src={EMPTY_CART_ICON} 
+            width={20} height={20} 
+            layout="responsive" /> */}
           </>
         )}
       </StyledDrawer>

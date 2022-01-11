@@ -1,9 +1,9 @@
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
-import { ControlButtonProps } from 'src/common/types/interfaces'
+
 import { ControlGroup } from './style'
 
-export default function ControlButton(props: ControlButtonProps) {
+export default function ControlButton(props: any) {
   const { handleAddingItems, handleRemovingItems, handleChange, value, error } = props
 
   return (

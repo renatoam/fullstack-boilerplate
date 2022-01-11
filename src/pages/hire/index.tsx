@@ -195,7 +195,7 @@ export default function Hire() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                  <Button fullWidth variant="contained" color="primary">
                     {tier.buttonText}
                   </Button>
                 </CardActions>
