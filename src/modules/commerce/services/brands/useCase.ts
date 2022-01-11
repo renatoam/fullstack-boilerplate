@@ -1,7 +1,6 @@
-import { GetBrandsType } from 'src/common/types/types'
 
 interface IBrandService {
-  getBrands(): Promise<GetBrandsType[]>
+  getBrands(): Promise<any[]>
 }
 export default class BrandUseCases {
   brandService: IBrandService

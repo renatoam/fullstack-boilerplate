@@ -1,6 +1,6 @@
 import { useForm } from '@hooks/useForm'
 
-import { Form } from './Registration'
+import { Form } from '../../../../app/styles/pages/Registration'
 
 /**
  * There are many ways to specify the validation rules for our form attributes.

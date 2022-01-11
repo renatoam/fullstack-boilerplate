@@ -1,7 +1,7 @@
 import Router from 'next/router'
 import { parseCookies, setCookie } from 'nookies'
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
-import axios from 'src/common/services/axios'
+// import axios from 'src/common/services/axios'
 import { v4 as uuid } from 'uuid'
 
 type User = {
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       maxAge: 60 * 60 * 1 // 1 hour
     })
 
-    axios.defaults.headers.Authorization = `Bearer ${token}`
+    // axios.defaults.headers.Authorization = `Bearer ${token}`
 
     setUser(user)
 

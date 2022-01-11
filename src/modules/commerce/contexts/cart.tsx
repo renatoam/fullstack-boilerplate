@@ -1,10 +1,9 @@
 import { createContext, useContext } from 'react'
-import { DispatchShape, GenericChildrenProps } from 'src/common/types/interfaces'
-import { ProductDataArray } from 'src/common/types/types'
+import { GenericChildrenProps } from 'src/common/types/interfaces'
 
 interface CartShape {
-  cart: ProductDataArray
-  dispatch: ({ type, payload }: DispatchShape) => void
+  cart: any
+  dispatch: ({ type, payload }: any) => void
 }
 
 const initialContextState: CartShape = {

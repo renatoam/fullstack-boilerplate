@@ -1,4 +1,3 @@
-import Container from '@components/Foundation/Container'
 import { ProductData } from '@modules/commerce/types/interfaces'
 
 // PARECE QUE SÓ CONSIGO TESTAR ESSAS COISAS RODANDO O BUILD
@@ -93,7 +92,7 @@ export default function ProductDetails({ currentProduct }: { currentProduct: Pro
   // if (!currentProduct) return <p>Loading...</p>
 
   return (
-    <Container>
+    <>
       <h1>[product]</h1>
       {/* <StyledSection className="wrapper">
         <StyledSection className="image">
@@ -119,6 +118,6 @@ export default function ProductDetails({ currentProduct }: { currentProduct: Pro
           <p>{currentProduct.description}</p>
         </StyledSection>
       </StyledSection> */}
-    </Container>
+    </>
   )
 }

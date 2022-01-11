@@ -1,14 +1,13 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ProductData } from 'src/common/types/interfaces'
-import { ProductDataArray } from 'src/common/types/types'
-import { RootState } from '../../../common/store'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { RootState } from '../../../common/store';
 
 /**
  * Todo arquivo de slice deve definir um tipo para o seu estado inicial
  * dessa forma, o createSlice pode inferir o tipo corretamente
  */
 interface CartShape {
-  cart: ProductDataArray
+  cart: any
 }
 
 const initialState: CartShape = {
@@ -20,7 +19,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     // Use the PayloadAction type to declare the contents of `action.payload`
-    addToCart: (state, action: PayloadAction<ProductData>) => {
+    addToCart: (state, action: PayloadAction<any>) => {
       const newProduct = {
         ...action.payload,
         stock: action.payload.quantity - 1,
@@ -29,11 +28,11 @@ export const cartSlice = createSlice({
 
       state.cart.push(newProduct)
     },
-    removeFromCart: (state, action: PayloadAction<ProductData>) => {
-      state.cart.filter(product => product.id !== action.payload.id)
+    removeFromCart: (state, action: PayloadAction<any>) => {
+      state.cart.filter((product: any) => product.id !== action.payload.id)
     },
-    increment: (state, action: PayloadAction<ProductData>) => {
-      const currentProductIndex = state.cart.findIndex(product => {
+    increment: (state, action: PayloadAction<any>) => {
+      const currentProductIndex = state.cart.findIndex((product: any) => {
         return product.id === action.payload.id
       })
 
@@ -43,8 +42,8 @@ export const cartSlice = createSlice({
       state.cart[currentProductIndex].currentQuantity += 1
       state.cart[currentProductIndex].stock -= 1
     },
-    decrement: (state, action: PayloadAction<ProductData>) => {
-      const currentProductIndex = state.cart.findIndex(product => {
+    decrement: (state, action: PayloadAction<any>) => {
+      const currentProductIndex = state.cart.findIndex((product: any) => {
         return product.id === action.payload.id
       })
 
@@ -52,8 +51,8 @@ export const cartSlice = createSlice({
         state.cart.splice(currentProductIndex, 1)
       }
     },
-    changeAmount: (state, action: PayloadAction<ProductData>) => {
-      const currentProductIndex = state.cart.findIndex(product => {
+    changeAmount: (state, action: PayloadAction<any>) => {
+      const currentProductIndex = state.cart.findIndex((product: any) => {
         return product.id === action.payload.id
       })
       const currentProduct = state.cart[currentProductIndex]
