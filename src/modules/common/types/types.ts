@@ -1,6 +1,6 @@
 import { ContainerProps as MuiContainerProps } from '@material-ui/core/Container'
+import { SkeletonProps } from '@modules/common/types/interfaces'
 import { ImageProps as NextImageProps } from 'next/image'
-import { SkeletonProps } from 'src/common/types/interfaces'
 
 export type ContainerProps = MuiContainerProps & {
   direction?: 'column' | 'column-reverse' | 'row' | 'row-reverse'

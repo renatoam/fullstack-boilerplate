@@ -1,4 +1,4 @@
-import axios from '../../../../common/services/axios'
+import axios from '../../../common/services/axios'
 import { GetProductsType } from '../../types/types'
 
 export const ProductService: GetProductsType = {

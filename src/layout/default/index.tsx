@@ -1,6 +1,6 @@
+import { DESCRIPTION, IMAGE, TITLE_PAGE } from '@constants/global'
 import Head from 'next/head'
 import { ReactNode } from 'react'
-import { DESCRIPTION, IMAGE, TITLE_PAGE } from 'src/common/constants/global'
 
 import ErrorBoundary from '@components/Configuration/Error'
 import SEO from '@components/Configuration/SEO'

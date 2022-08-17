@@ -4,7 +4,7 @@ import { ProductService } from '@modules/commerce/services/products/service';
 
 import {
     fetchProductsFailure, fetchProductsSuccess
-} from '../../modules/commerce/store/productsSlice';
+} from '../../commerce/store/productsSlice';
 
 function* fetchProductsSaga(action: any) {
   try {

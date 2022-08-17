@@ -1,4 +1,4 @@
-import axios from '../../../../common/services/axios';
+import axios from '../../../common/services/axios';
 
 export const BrandService = {
   async getBrands(): Promise<any[]> {

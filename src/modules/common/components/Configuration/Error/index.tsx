@@ -1,5 +1,5 @@
+import { ErrorProps, ErrorState } from '@modules/common/types/interfaces'
 import { Component, ErrorInfo } from 'react'
-import { ErrorProps, ErrorState } from 'src/common/types/interfaces'
 import { StyledH1 } from './style'
 
 class ErrorBoundary extends Component<ErrorProps, ErrorState> {

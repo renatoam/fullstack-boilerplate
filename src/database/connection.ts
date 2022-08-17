@@ -41,3 +41,5 @@ export async function connectToDatabase() {
 
   return { client, db }
 }
+
+export const client = new MongoClient(MONGODB_URI, {});

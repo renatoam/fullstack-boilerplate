@@ -1,8 +1,8 @@
-import { RequestErrors } from 'src/common/types/types';
+import { RequestErrors } from '@modules/common/types/types';
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { RootState } from '../../../common/store';
+import { RootState } from '../../common/store';
 
 interface ProductsShape {
   data: any | undefined

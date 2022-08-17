@@ -1,4 +1,4 @@
-import { SEOProps } from 'src/common/types/interfaces'
+import { SEOProps } from '@modules/common/types/interfaces'
 
 export default function SEO(props: SEOProps) {
   const { title, description, image, shouldIndexPage = true } = props

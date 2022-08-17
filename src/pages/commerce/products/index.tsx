@@ -1,4 +1,4 @@
-import { StyledMain } from 'src/app/styles/pages/products'
+import { StyledMain } from '@styles/pages/products'
 
 import { CircularProgress } from '@material-ui/core'
 import { handleProducts } from '@modules/commerce/helpers/handleProducts'

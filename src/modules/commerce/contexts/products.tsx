@@ -1,5 +1,5 @@
+import { GenericChildrenProps } from '@modules/common/types/interfaces'
 import { createContext, useContext, useEffect, useState } from 'react'
-import { GenericChildrenProps } from 'src/common/types/interfaces'
 
 import { useAuth } from '@modules/auth/contexts/auth'
 import { productUseCases } from '@modules/commerce/services/products'

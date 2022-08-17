@@ -1,5 +1,5 @@
+import { GenericChildrenProps } from '@modules/common/types/interfaces'
 import { createContext, useContext } from 'react'
-import { GenericChildrenProps } from 'src/common/types/interfaces'
 
 interface CartShape {
   cart: any

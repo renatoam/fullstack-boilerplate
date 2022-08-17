@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { RootState } from '../../../common/store';
+import { RootState } from '../../common/store';
 
 /**
  * Todo arquivo de slice deve definir um tipo para o seu estado inicial

@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
-import cartReducer from '../../modules/commerce/store/cartSlice'
-import productsReducer from '../../modules/commerce/store/productsSlice'
+import cartReducer from '../../commerce/store/cartSlice'
+import productsReducer from '../../commerce/store/productsSlice'
 import sagas from './sagas'
 
 const sagaMiddleware = createSagaMiddleware()

@@ -1,14 +1,11 @@
-import { connectToDatabase } from './connection'
+import { client } from './connection';
 
 export async function getProducts(limit: number) {
-  const { db, client } = await connectToDatabase()
+  const { MONGODB_COLLECTION, MONGODB_DB } = process.env;
+  const mongodb = await client.connect();
 
-  if (!client.isConnected()) {
-    return Error('Client database is not connected!')
-  }
-
-  const products = await db
-    .collection('adidasProducts')
+  const products = await mongodb.db(MONGODB_DB)
+    .collection(MONGODB_COLLECTION || '')
     .find({}, { projection: { _id: 0 } })
     .limit(limit)
     .toArray()

@@ -22,37 +22,40 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "src/common/components/*"
+        "src/modules/common/components/*"
       ],
       "@constants/*": [
-        "src/common/constants/*"
+        "src/modules/common/constants/*"
       ],
       "@context/*": [
-        "src/common/context/*"
+        "src/modules/common/context/*"
       ],
       "@helpers/*": [
-        "src/common/helpers/*"
+        "src/modules/common/helpers/*"
       ],
       "@hooks/*": [
-        "src/common/hooks/*"
+        "src/modules/common/hooks/*"
       ],
       "@pages/*": [
         "./src/pages/*"
       ],
       "@services/*": [
-        "src/common/services/*"
+        "src/modules/common/services/*"
       ],
       "@styles/*": [
-        "src/common/styles/*"
+        "src/modules/common/styles/*"
       ],
       "@store/*": [
-        "src/common/store/*"
+        "src/modules/common/store/*"
       ],
       "@database/*": [
         "./src/database/*"
       ],
       "@modules/*": [
         "./src/modules/*"
+      ],
+      "@common/*": [
+        "./src/modules/common/*"
       ],
       "@public/*": [
         "./public/*"
