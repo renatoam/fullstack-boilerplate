@@ -1,13 +1,5 @@
 import { handleProducts } from "@modules/commerce/helpers/handleProducts"
-
-type Request = {
-  method?: string | 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
-}
-
-type Response = {
-  status: (statusCode: number) => Response
-  json: (body: any) => void
-}
+import { Request, Response } from "../../protocols/http"
 
 class GetAllProductsController<
   IRequest extends Request,

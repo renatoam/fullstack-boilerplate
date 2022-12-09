@@ -42,4 +42,21 @@ export async function connectToDatabase() {
   return { client, db }
 }
 
-export const client = new MongoClient(MONGODB_URI, {});
+export const client = new MongoClient(MONGODB_URI, {
+
+});
+
+export async function mongoConnection() {
+  const client = new MongoClient(MONGODB_URI)
+  
+  try {
+    await client.connect()
+    const db = client.db(MONGODB_DB)
+    return {
+      products: db.collection('productsAdidas')
+      // other collections go here
+    }
+  } catch (error) {
+    new Error('Something goes wrong on connecting to Mongo', { cause: error })
+  }
+}
