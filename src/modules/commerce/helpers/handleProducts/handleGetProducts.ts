@@ -1,21 +1,23 @@
-type TFetchProducts<T> = (limit: number) => T
-type TNormalizer = (mongoObject: { [key: string]: any }) => Record<string, unknown>[]
+import { WithId } from "mongodb"
 
-interface IHandleProducts<T> {
-  fetchProducts: TFetchProducts<T>
+type TFetchProducts = (limit: number) => any
+type TNormalizer = (mongoObject: WithId<Document>[]) => Record<string, unknown>[]
+
+interface IHandleProducts {
+  fetchProducts: TFetchProducts
   normalizer: TNormalizer
 }
 
-class HandleProducts<T> {
-  fetchProducts: TFetchProducts<T>
+class HandleProducts {
+  fetchProducts: TFetchProducts
   normalizer: TNormalizer
 
-  constructor({ fetchProducts, normalizer }: IHandleProducts<T>) {
+  constructor({ fetchProducts, normalizer }: IHandleProducts) {
     this.fetchProducts = fetchProducts
     this.normalizer = normalizer
   }
 
-  async getProducts(limit: number) {
+  async getProducts(limit: number = 0) {
     const products = await this.fetchProducts(limit)
     return this.normalizer(products)
   }

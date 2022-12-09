@@ -19,7 +19,7 @@
   },
   "editor.wordWrapColumn": 200,
   "editor.detectIndentation": false,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 2,
   "editor.suggest.showStatusBar": true,
   "html.format.wrapLineLength": 150,
   "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",

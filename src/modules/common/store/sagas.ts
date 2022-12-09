@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 
-import { ProductService } from '@modules/commerce/services/products/service';
+import { ProductService } from '@modules/commerce/api/products/service';
 
 import {
     fetchProductsFailure, fetchProductsSuccess

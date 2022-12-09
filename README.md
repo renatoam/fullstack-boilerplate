@@ -1,6 +1,10 @@
-# Next JS Boilerplate
+# FE/FS Boilerplate
 
-Aplicação criada para servir de base para projetos futuros e para que eu possa testar novas ferramentas, padrões, etc.
+Aplicação criada para servir de base para projetos Front-End ou Full-Stack com NextJS. Pode ser utilizado para projetos de pequeno ou médio porte e testes de processos seletivos.
+
+A proposta se baseia em montar pequenas aplicações dentro de um app só, que podem ser modificadas de acordo com a necessidade de quem estiver usando.
+
+Mesmo para Back-End, ainda que de forma limitada, esse projeto pode ser bem útil, especialmente para Junior. É válido lembrar, entretanto, que o projeto é todo feito usando JavaScript, seja no FE (JS/TS), seja no BE (Node/TS).
 
 ## Executando a aplicação
 

@@ -1,25 +1,22 @@
 import { StyledMain } from '@styles/pages/products'
 
 import { CircularProgress } from '@material-ui/core'
-import { handleProducts } from '@modules/commerce/helpers/handleProducts'
+import { productUseCases } from '@modules/commerce/api/products'
 import { ProductDataArray } from '@modules/commerce/types/types'
+import { useEffect, useState } from 'react'
 
-export interface ProductPageProps {
-  products: ProductDataArray
-}
+export default function Products() {
+  const [products, setProducts] = useState<ProductDataArray>([])
 
-export async function getServerSideProps() {
-  const products = await handleProducts.getProducts(10)
+  async function fetchProducts() {
+    const response = await productUseCases.getProducts()
 
-  return {
-    props: {
-      products
-    }
+    setProducts(response)
   }
-}
 
-export default function Products(props: ProductPageProps) {
-  const { products } = props
+  useEffect(() => {
+    fetchProducts()
+  }, [])
 
   if (!products.length) return <CircularProgress />
 
